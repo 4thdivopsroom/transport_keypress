@@ -1201,8 +1201,14 @@ function clearSig(canvasId){
   pad.ctx.clearRect(0,0,pad.canvas.width,pad.canvas.height);
   pad.isEmpty=true;
   updateSigState(canvasId);
-  // Also clear the modal if it's open for this pad
-  if(window._sigModalSource===canvasId)clearSigModal();
+  // Sync modal canvas if open for this pad — but DON'T call clearSigModal()
+  // to avoid a mutual recursion loop (clearSigModal also calls clearSig)
+  if(window._sigModalSource===canvasId&&_sigModalCtx){
+    const c=document.getElementById('sig-modal-canvas');
+    if(c)_sigModalCtx.clearRect(0,0,c.width,c.height);
+    const ph=document.getElementById('sig-modal-ph');
+    if(ph)ph.style.display='flex';
+  }
 }
 
 // ── SIG EXPAND MODAL ──
@@ -1250,8 +1256,15 @@ function clearSigModal(){
   const c=document.getElementById('sig-modal-canvas');
   _sigModalCtx.clearRect(0,0,c.width,c.height);
   document.getElementById('sig-modal-ph').style.display='flex';
-  // Also clear the source pad
-  if(window._sigModalSource)clearSig(window._sigModalSource);
+  // Clear the source pad directly — do NOT call clearSig() to avoid mutual recursion
+  if(window._sigModalSource){
+    const pad=sigPads[window._sigModalSource];
+    if(pad){
+      pad.ctx.clearRect(0,0,pad.canvas.width,pad.canvas.height);
+      pad.isEmpty=true;
+      updateSigState(window._sigModalSource);
+    }
+  }
 }
 
 function closeSigModal(commit){
@@ -2854,8 +2867,8 @@ document.addEventListener('DOMContentLoaded', () => {
     <div class="sig-modal-hdr">
       <div class="sig-modal-title" id="sig-modal-title">✍ Signature</div>
       <div class="sig-modal-actions">
-        <button class="sig-modal-clear" onclick="clearSigModal()">Clear</button>
         <button class="sig-modal-done" onclick="closeSigModal(true)">Done ✓</button>
+        <button class="sig-modal-clear" onclick="clearSigModal()">Clear</button>
       </div>
     </div>
     <div class="sig-modal-canvas-wrap">
