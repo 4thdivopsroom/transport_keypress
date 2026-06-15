@@ -315,10 +315,30 @@ header{max-width:1400px;margin:0 auto 18px;display:flex;align-items:center;gap:1
 .sig-placeholder span{font-size:11px;color:var(--text-dim);letter-spacing:.04em;}
 .sig-actions{position:absolute;top:4px;right:5px;display:flex;gap:4px;}
 .sig-clear{font-family:'Inter',sans-serif;font-size:9px;font-weight:600;padding:3px 7px;border-radius:4px;border:1px solid var(--border2);background:var(--surface);color:var(--text-dim);cursor:pointer;transition:all .15s;opacity:0;letter-spacing:.04em;text-transform:uppercase;}
-.sig-wrap:hover .sig-clear{opacity:1;}
+.sig-expand{font-family:'Inter',sans-serif;font-size:9px;font-weight:600;padding:3px 7px;border-radius:4px;border:1px solid var(--border2);background:var(--surface);color:var(--text-dim);cursor:pointer;transition:all .15s;opacity:0;letter-spacing:.04em;text-transform:uppercase;}
+.sig-wrap:hover .sig-clear,.sig-wrap:hover .sig-expand{opacity:1;}
 .sig-clear:hover{color:var(--danger);border-color:var(--danger);}
+.sig-expand:hover{color:var(--accent);border-color:var(--accent);}
 .sig-label{font-size:9px;color:var(--text-muted);margin-top:4px;display:flex;align-items:center;gap:4px;letter-spacing:.04em;}
 .sig-label.signed-lbl{color:var(--in);}
+
+/* ── SIGNATURE EXPAND MODAL ── */
+.sig-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.82);z-index:9100;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s;padding:20px;}
+.sig-modal-overlay.open{opacity:1;pointer-events:all;}
+.sig-modal-panel{background:var(--surface);border:1px solid var(--border2);border-radius:12px;width:min(640px,100%);display:flex;flex-direction:column;transform:scale(.97);transition:transform .2s;overflow:hidden;}
+.sig-modal-overlay.open .sig-modal-panel{transform:scale(1);}
+.sig-modal-hdr{padding:12px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:10px;flex-shrink:0;}
+.sig-modal-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-dim);}
+.sig-modal-actions{display:flex;gap:6px;align-items:center;}
+.sig-modal-clear{font-family:'Inter',sans-serif;font-size:10px;font-weight:600;padding:4px 10px;border-radius:5px;border:1px solid var(--border2);background:transparent;color:var(--text-dim);cursor:pointer;transition:all .15s;letter-spacing:.04em;text-transform:uppercase;}
+.sig-modal-clear:hover{color:var(--danger);border-color:var(--danger);}
+.sig-modal-done{font-family:'Inter',sans-serif;font-size:10px;font-weight:700;padding:4px 12px;border-radius:5px;border:none;background:var(--in);color:#111;cursor:pointer;transition:opacity .15s;letter-spacing:.04em;text-transform:uppercase;}
+.sig-modal-done:hover{opacity:.85;}
+.sig-modal-canvas-wrap{position:relative;background:var(--surface);margin:0;}
+.sig-modal-canvas{display:block;width:100%;height:220px;cursor:crosshair;touch-action:none;}
+.sig-modal-placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;opacity:.35;}
+.sig-modal-placeholder span{font-size:13px;color:var(--text-dim);letter-spacing:.04em;}
+.sig-modal-footer{padding:8px 16px;font-size:9px;color:var(--text-muted);letter-spacing:.04em;border-top:1px solid var(--border);}
 
 /* ── RECORD VIEW MODAL ── */
 .record-modal{width:min(640px,100%);}
@@ -783,7 +803,7 @@ body.is-admin .admin-only{display:flex;}
           <div class="sig-wrap" id="sig-wrap-borrow">
             <canvas class="sig-canvas" id="sig-borrow" height="110"></canvas>
             <div class="sig-placeholder" id="sig-ph-borrow"><span>✍ Sign here</span></div>
-            <div class="sig-actions"><button class="sig-clear" onclick="clearSig('sig-borrow')">Clear</button></div>
+            <div class="sig-actions"><button class="sig-expand" onclick="openSigModal('sig-borrow')" title="Expand">⛶ Expand</button><button class="sig-clear" onclick="clearSig('sig-borrow')">Clear</button></div>
           </div>
           <div class="sig-label" id="sig-lbl-borrow">Draw signature above</div>
         </div>
@@ -819,7 +839,7 @@ body.is-admin .admin-only{display:flex;}
           <div class="sig-wrap" id="sig-wrap-ops-issue">
             <canvas class="sig-canvas" id="sig-ops-issue" height="110"></canvas>
             <div class="sig-placeholder" id="sig-ph-ops-issue"><span>✍ Sign here</span></div>
-            <div class="sig-actions"><button class="sig-clear" onclick="clearSig('sig-ops-issue')">Clear</button></div>
+            <div class="sig-actions"><button class="sig-expand" onclick="openSigModal('sig-ops-issue')" title="Expand">⛶ Expand</button><button class="sig-clear" onclick="clearSig('sig-ops-issue')">Clear</button></div>
           </div>
           <div class="sig-label" id="sig-lbl-ops-issue">Draw signature above</div>
         </div>
@@ -906,7 +926,7 @@ body.is-admin .admin-only{display:flex;}
           <div class="sig-wrap" id="sig-wrap-ret-person">
             <canvas class="sig-canvas" id="sig-ret-person" height="110"></canvas>
             <div class="sig-placeholder" id="sig-ph-ret-person"><span>✍ Sign here</span></div>
-            <div class="sig-actions"><button class="sig-clear" onclick="clearSig('sig-ret-person')">Clear</button></div>
+            <div class="sig-actions"><button class="sig-expand" onclick="openSigModal('sig-ret-person')" title="Expand">⛶ Expand</button><button class="sig-clear" onclick="clearSig('sig-ret-person')">Clear</button></div>
           </div>
           <div class="sig-label" id="sig-lbl-ret-person">Draw signature above</div>
         </div>
@@ -923,7 +943,7 @@ body.is-admin .admin-only{display:flex;}
           <div class="sig-wrap" id="sig-wrap-ret-ops">
             <canvas class="sig-canvas" id="sig-ret-ops" height="110"></canvas>
             <div class="sig-placeholder" id="sig-ph-ret-ops"><span>✍ Sign here</span></div>
-            <div class="sig-actions"><button class="sig-clear" onclick="clearSig('sig-ret-ops')">Clear</button></div>
+            <div class="sig-actions"><button class="sig-expand" onclick="openSigModal('sig-ret-ops')" title="Expand">⛶ Expand</button><button class="sig-clear" onclick="clearSig('sig-ret-ops')">Clear</button></div>
           </div>
           <div class="sig-label" id="sig-lbl-ret-ops">Draw signature above</div>
         </div>
@@ -1068,39 +1088,100 @@ function addLog(id,toStatus,toLabel,detail='',recSnapshot=null){
 
 // ─── SIGNATURE PAD ────────────────────────────────────────
 const sigPads={};
+
+// ── HIGH-PERFORMANCE SIGNATURE ENGINE ──
+// Uses Pointer Events (higher priority than mouse events on Windows),
+// getCoalescedEvents() to capture every intermediate OS point between frames,
+// and quadratic Bézier smoothing to eliminate jagged edges at any mouse speed.
+function _setupSigCanvas(canvas,canvasId,cssHeight){
+  const dpr=window.devicePixelRatio||1;
+  canvas.width=canvas.offsetWidth*dpr;
+  canvas.height=cssHeight*dpr;
+  const ctx=canvas.getContext('2d');
+  ctx.scale(dpr,dpr);
+  ctx.strokeStyle=document.documentElement.classList.contains('light')?'#1e293b':'#e2e8f0';
+  ctx.lineWidth=2.2;ctx.lineCap='round';ctx.lineJoin='round';
+
+  let drawing=false,points=[];
+
+  const ptFromEvent=(e)=>{
+    const r=canvas.getBoundingClientRect();
+    return{x:(e.clientX-r.left),y:(e.clientY-r.top)};
+  };
+
+  // Draw smooth quadratic Bézier through a buffer of points
+  const flushPoints=(pts)=>{
+    if(pts.length<2)return;
+    ctx.beginPath();
+    ctx.moveTo(pts[0].x,pts[0].y);
+    for(let i=1;i<pts.length-1;i++){
+      const mx=(pts[i].x+pts[i+1].x)/2;
+      const my=(pts[i].y+pts[i+1].y)/2;
+      ctx.quadraticCurveTo(pts[i].x,pts[i].y,mx,my);
+    }
+    const last=pts[pts.length-1];
+    ctx.lineTo(last.x,last.y);
+    ctx.stroke();
+  };
+
+  const onDown=(e)=>{
+    if(e.button!==undefined&&e.button!==0)return;
+    e.preventDefault();
+    canvas.setPointerCapture(e.pointerId);
+    drawing=true;
+    const p=ptFromEvent(e);
+    points=[p];
+    ctx.beginPath();ctx.moveTo(p.x,p.y);
+  };
+
+  const onMove=(e)=>{
+    if(!drawing)return;
+    e.preventDefault();
+    // getCoalescedEvents captures ALL intermediate positions the OS recorded
+    // between animation frames — critical for slow-polling corporate PCs
+    const evts=(e.getCoalescedEvents&&e.getCoalescedEvents())||[e];
+    const batch=evts.map(ptFromEvent);
+    points.push(...batch);
+    // Keep last point for next segment continuity; flush with overlap
+    if(points.length>=2){
+      flushPoints(points);
+      points=[points[points.length-1]]; // keep tail for smooth join
+    }
+    updateSigState(canvasId);
+  };
+
+  const onUp=(e)=>{
+    if(!drawing)return;
+    drawing=false;
+    if(points.length)flushPoints(points);
+    points=[];
+    updateSigState(canvasId);
+  };
+
+  // Remove any old pointer listeners if reinitialising
+  if(canvas._sigCleanup)canvas._sigCleanup();
+
+  canvas.addEventListener('pointerdown',onDown);
+  canvas.addEventListener('pointermove',onMove);
+  canvas.addEventListener('pointerup',onUp);
+  canvas.addEventListener('pointercancel',onUp);
+  canvas.addEventListener('pointerleave',onUp);
+
+  canvas._sigCleanup=()=>{
+    canvas.removeEventListener('pointerdown',onDown);
+    canvas.removeEventListener('pointermove',onMove);
+    canvas.removeEventListener('pointerup',onUp);
+    canvas.removeEventListener('pointercancel',onUp);
+    canvas.removeEventListener('pointerleave',onUp);
+  };
+
+  return ctx;
+}
+
 function initSig(canvasId){
   const canvas=document.getElementById(canvasId);
   if(!canvas)return;
-  // set actual pixel size
-  const rect=canvas.getBoundingClientRect();
-  canvas.width=canvas.offsetWidth*window.devicePixelRatio||canvas.offsetWidth;
-  canvas.height=110*window.devicePixelRatio||110;
-  const ctx=canvas.getContext('2d');
-  ctx.scale(window.devicePixelRatio||1,window.devicePixelRatio||1);
-  ctx.strokeStyle=document.documentElement.classList.contains('light')?'#1e293b':'#e2e8f0';
-  ctx.lineWidth=2.2;
-  ctx.lineCap='round';
-  ctx.lineJoin='round';
-  let drawing=false,lastX=0,lastY=0;
-  const getPos=(e)=>{
-    const r=canvas.getBoundingClientRect();
-    if(e.touches)return{x:e.touches[0].clientX-r.left,y:e.touches[0].clientY-r.top};
-    return{x:e.clientX-r.left,y:e.clientY-r.top};
-  };
-  const start=(e)=>{e.preventDefault();drawing=true;const p=getPos(e);lastX=p.x;lastY=p.y;ctx.beginPath();ctx.moveTo(lastX,lastY);};
-  const draw=(e)=>{
-    if(!drawing)return;e.preventDefault();
-    const p=getPos(e);
-    ctx.lineTo(p.x,p.y);ctx.stroke();
-    ctx.beginPath();ctx.moveTo(p.x,p.y);
-    lastX=p.x;lastY=p.y;
-    updateSigState(canvasId);
-  };
-  const stop=()=>{drawing=false;updateSigState(canvasId);};
-  canvas.addEventListener('mousedown',start);canvas.addEventListener('mousemove',draw);
-  canvas.addEventListener('mouseup',stop);canvas.addEventListener('mouseleave',stop);
-  canvas.addEventListener('touchstart',start,{passive:false});canvas.addEventListener('touchmove',draw,{passive:false});
-  canvas.addEventListener('touchend',stop);
+  const ctx=_setupSigCanvas(canvas,canvasId,110);
   sigPads[canvasId]={canvas,ctx,isEmpty:true};
 }
 function updateSigState(canvasId){
@@ -1120,6 +1201,78 @@ function clearSig(canvasId){
   pad.ctx.clearRect(0,0,pad.canvas.width,pad.canvas.height);
   pad.isEmpty=true;
   updateSigState(canvasId);
+  // Also clear the modal if it's open for this pad
+  if(window._sigModalSource===canvasId)clearSigModal();
+}
+
+// ── SIG EXPAND MODAL ──
+let _sigModalCtx=null;
+window._sigModalSource=null;
+
+function openSigModal(canvasId){
+  window._sigModalSource=canvasId;
+  const ov=document.getElementById('sig-modal-ov');
+  const modalCanvas=document.getElementById('sig-modal-canvas');
+  const ph=document.getElementById('sig-modal-ph');
+
+  // Label
+  const labels={'sig-borrow':'Borrower Signature','sig-ops-issue':'OPS Issuing Signature',
+    'sig-ret-person':'Returning Person Signature','sig-ret-ops':'OPS Personnel Signature',
+    'sig-kp-close':'Driver Signature (Close)','sig-kp-open':'Driver Signature (Open)'};
+  document.getElementById('sig-modal-title').textContent='✍ '+(labels[canvasId]||'Signature');
+
+  // Init/resize the modal canvas
+  ov.classList.add('open');
+  requestAnimationFrame(()=>{
+    if(modalCanvas._sigCleanup)modalCanvas._sigCleanup();
+    _sigModalCtx=_setupSigCanvas(modalCanvas,'_modal_',220);
+
+    // Copy existing strokes from small pad into the expanded canvas
+    const src=sigPads[canvasId];
+    if(src&&!src.isEmpty){
+      const dpr=window.devicePixelRatio||1;
+      _sigModalCtx.save();
+      _sigModalCtx.scale(1/dpr,1/dpr);
+      _sigModalCtx.drawImage(src.canvas,0,0,modalCanvas.width,modalCanvas.height);
+      _sigModalCtx.restore();
+      ph.style.display='none';
+    } else {
+      ph.style.display='flex';
+    }
+
+    // Update placeholder on draw
+    modalCanvas.addEventListener('pointermove',()=>{ph.style.display='none';},{once:true});
+  });
+}
+
+function clearSigModal(){
+  if(!_sigModalCtx)return;
+  const c=document.getElementById('sig-modal-canvas');
+  _sigModalCtx.clearRect(0,0,c.width,c.height);
+  document.getElementById('sig-modal-ph').style.display='flex';
+  // Also clear the source pad
+  if(window._sigModalSource)clearSig(window._sigModalSource);
+}
+
+function closeSigModal(commit){
+  const ov=document.getElementById('sig-modal-ov');
+  ov.classList.remove('open');
+  if(commit&&window._sigModalSource&&_sigModalCtx){
+    // Copy modal strokes back to the original small pad
+    const target=sigPads[window._sigModalSource];
+    if(target){
+      const src=document.getElementById('sig-modal-canvas');
+      target.ctx.clearRect(0,0,target.canvas.width,target.canvas.height);
+      const dpr=window.devicePixelRatio||1;
+      target.ctx.save();
+      target.ctx.scale(1/dpr,1/dpr);
+      target.ctx.drawImage(src,0,0,target.canvas.width,target.canvas.height);
+      target.ctx.restore();
+      updateSigState(window._sigModalSource);
+    }
+  }
+  window._sigModalSource=null;
+  _sigModalCtx=null;
 }
 function getSigDataURL(canvasId){
   const pad=sigPads[canvasId];
@@ -1165,13 +1318,13 @@ function initAllSigs(){
 }
 // re-init sigs when modal opens
 function reinitSig(id){setTimeout(()=>{
-  if(sigPads[id]){
-    const pad=sigPads[id];
-    pad.ctx.strokeStyle=document.documentElement.classList.contains('light')?'#1e293b':'#e2e8f0';
-    pad.isEmpty=true;
-    pad.ctx.clearRect(0,0,pad.canvas.width,pad.canvas.height);
-    updateSigState(id);
-  } else initSig(id);
+  const canvas=document.getElementById(id);
+  if(!canvas)return;
+  // Clean up old listeners before reinitialising
+  if(canvas._sigCleanup)canvas._sigCleanup();
+  const ctx=_setupSigCanvas(canvas,id,110);
+  sigPads[id]={canvas,ctx,isEmpty:true};
+  updateSigState(id);
 },60);}
 
 // ─── STATUS CHANGE ────────────────────────────────────────
@@ -1799,6 +1952,7 @@ function toggleTheme(){
   document.getElementById('th-lbl').textContent=l?'Dark':'Light';
   // update sig stroke colors
   Object.values(sigPads).forEach(p=>{p.ctx.strokeStyle=l?'#1e293b':'#e2e8f0';});
+  if(_sigModalCtx)_sigModalCtx.strokeStyle=l?'#1e293b':'#e2e8f0';
 }
 
 // ─── CLOCK + TICKS ────────────────────────────────────────
@@ -2574,7 +2728,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="sig-wrap" id="sig-wrap-kp-close">
             <canvas class="sig-canvas" id="sig-kp-close" height="110"></canvas>
             <div class="sig-placeholder" id="sig-ph-kp-close"><span>✍ Driver signs here</span></div>
-            <div class="sig-actions"><button class="sig-clear" onclick="clearSig('sig-kp-close')">Clear</button></div>
+            <div class="sig-actions"><button class="sig-expand" onclick="openSigModal('sig-kp-close')" title="Expand">⛶ Expand</button><button class="sig-clear" onclick="clearSig('sig-kp-close')">Clear</button></div>
           </div>
           <div class="sig-label" id="sig-lbl-kp-close">Draw signature above</div>
         </div>
@@ -2621,7 +2775,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="sig-wrap" id="sig-wrap-kp-open">
             <canvas class="sig-canvas" id="sig-kp-open" height="110"></canvas>
             <div class="sig-placeholder" id="sig-ph-kp-open"><span>✍ Driver signs here</span></div>
-            <div class="sig-actions"><button class="sig-clear" onclick="clearSig('sig-kp-open')">Clear</button></div>
+            <div class="sig-actions"><button class="sig-expand" onclick="openSigModal('sig-kp-open')" title="Expand">⛶ Expand</button><button class="sig-clear" onclick="clearSig('sig-kp-open')">Clear</button></div>
           </div>
           <div class="sig-label" id="sig-lbl-kp-open">Draw signature above</div>
         </div>
@@ -2691,6 +2845,24 @@ document.addEventListener('DOMContentLoaded', () => {
       <button class="bcancel" onclick="closeVehForm()">Cancel</button>
       <button class="bprimary bp-fleet" id="veh-form-save-btn" onclick="saveVehForm()">Save Vehicle</button>
     </div>
+  </div>
+</div>
+
+<!-- ── SIG EXPAND MODAL ── -->
+<div class="sig-modal-overlay" id="sig-modal-ov" onclick="if(event.target===this)closeSigModal(false)">
+  <div class="sig-modal-panel">
+    <div class="sig-modal-hdr">
+      <div class="sig-modal-title" id="sig-modal-title">✍ Signature</div>
+      <div class="sig-modal-actions">
+        <button class="sig-modal-clear" onclick="clearSigModal()">Clear</button>
+        <button class="sig-modal-done" onclick="closeSigModal(true)">Done ✓</button>
+      </div>
+    </div>
+    <div class="sig-modal-canvas-wrap">
+      <canvas class="sig-modal-canvas" id="sig-modal-canvas"></canvas>
+      <div class="sig-modal-placeholder" id="sig-modal-ph"><span>✍ Sign here — more room to write</span></div>
+    </div>
+    <div class="sig-modal-footer">Sign above, then tap Done to confirm. Tap outside or Done to close.</div>
   </div>
 </div>
 
