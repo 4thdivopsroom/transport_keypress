@@ -213,6 +213,21 @@ header{max-width:1400px;margin:0 auto 18px;display:flex;align-items:center;gap:1
 .midnight-banner-text{flex:1;}
 .midnight-flag{border-radius:4px;padding:2px 6px;font-size:8px;font-weight:700;color:var(--danger);letter-spacing:.05em;text-transform:uppercase;white-space:nowrap;}
 @keyframes pulseDanger{0%,100%{opacity:1}50%{opacity:.4}}
+
+/* ── EXPORT REMINDER BANNER ── */
+.export-banner{max-width:1400px;margin:0 auto 12px;border-radius:8px;padding:10px 16px;display:flex;align-items:center;gap:12px;cursor:pointer;transition:background .2s,border-color .2s,transform .12s;background:linear-gradient(135deg,rgba(99,102,241,.08),transparent);border:1px solid rgba(99,102,241,.35);}
+.export-banner:hover{transform:translateY(-1px);background:linear-gradient(135deg,rgba(99,102,241,.13),transparent);}
+.export-banner.urgent{background:linear-gradient(135deg,rgba(224,82,82,.1),transparent);border:1px solid rgba(224,82,82,.4);}
+.export-banner.urgent:hover{background:linear-gradient(135deg,rgba(224,82,82,.16),transparent);}
+.export-banner-icon{font-size:18px;flex-shrink:0;}
+.export-banner-text{flex:1;}
+.export-banner-title{font-size:12px;font-weight:700;margin-bottom:2px;color:#818cf8;}
+.export-banner.urgent .export-banner-title{color:var(--danger);}
+.export-banner-sub{font-size:10px;color:var(--text-dim);}
+.export-banner-cta{font-family:'Inter',sans-serif;font-size:10px;font-weight:700;padding:6px 12px;border-radius:6px;border:1px solid rgba(99,102,241,.5);color:#818cf8;background:transparent;flex-shrink:0;letter-spacing:.04em;text-transform:uppercase;}
+.export-banner.urgent .export-banner-cta{border-color:rgba(224,82,82,.5);color:var(--danger);}
+.export-banner-dismiss{font-size:14px;color:var(--text-muted);cursor:pointer;flex-shrink:0;padding:2px 4px;line-height:1;opacity:.6;}
+.export-banner-dismiss:hover{opacity:1;}
 /* Remarks bar */
 .card-remarks-bar{border-top:1px solid var(--border);padding:5px 12px 5px 13px;background:transparent;display:flex;align-items:center;gap:6px;min-height:30px;flex-shrink:0;}
 .rmk-text{flex:1;font-size:10px;color:var(--text-muted);font-style:italic;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
@@ -650,6 +665,16 @@ body.is-admin .admin-only{display:flex;}
   <div class="closing-countdown" id="closing-countdown"></div>
 </div>
 
+<div class="export-banner" id="export-banner" style="display:none;" onclick="exportLogPDF();dismissExportBanner();">
+  <div class="export-banner-icon" id="export-banner-icon">📤</div>
+  <div class="export-banner-text">
+    <div class="export-banner-title" id="export-banner-title">Backup Reminder</div>
+    <div class="export-banner-sub" id="export-banner-sub">A number of records haven't been exported yet.</div>
+  </div>
+  <button class="export-banner-cta" onclick="event.stopPropagation();exportLogPDF();dismissExportBanner();">⬇ Save PDF</button>
+  <div class="export-banner-dismiss" onclick="event.stopPropagation();dismissExportBanner();" title="Dismiss for now">✕</div>
+</div>
+
 <div class="midnight-banner" id="midnight-banner" style="display:none;">
   <div style="font-size:18px;">🌙</div>
   <div class="midnight-banner-text">
@@ -1084,6 +1109,7 @@ function addLog(id,toStatus,toLabel,detail='',recSnapshot=null){
   const by=_actionBy||null;
   _actionBy=null; // reset after use
   auditLog.unshift({ts:Date.now(),id,toStatus,toLabel,vehicle:v?v.vehicle:'SYSTEM',reg:v?v.reg:'',detail,rec:recSnapshot,by});
+  updateExportBanner();
 }
 
 // ─── SIGNATURE PAD ────────────────────────────────────────
@@ -1779,6 +1805,75 @@ function exportLogPDF(){
   </div>`;
   pa.style.display='block';
   setTimeout(()=>{window.print();pa.style.display='none';pa.innerHTML='';},100);
+  // Record this export so the backup reminder banner knows everything's covered
+  markExported();
+}
+
+// ─── EXPORT REMINDER BANNER ────────────────────────────────
+const EXPORT_REMINDER_KEY='opsKeypress_lastExport';
+const EXPORT_REMIND_AFTER_MS=4*60*60*1000;     // nag again after 4h of no export
+const EXPORT_REMIND_AFTER_COUNT=15;            // or after 15 new unexported entries
+const EXPORT_SNOOZE_MS=30*60*1000;             // dismiss button snoozes for 30 min
+
+function markExported(){
+  try{
+    localStorage.setItem(EXPORT_REMINDER_KEY, JSON.stringify({
+      lastExportAt: Date.now(),
+      lastExportCount: auditLog.length
+    }));
+  }catch(e){}
+  updateExportBanner();
+}
+function dismissExportBanner(){
+  try{
+    const raw=JSON.parse(localStorage.getItem(EXPORT_REMINDER_KEY)||'{}');
+    raw.snoozeUntil=Date.now()+EXPORT_SNOOZE_MS;
+    localStorage.setItem(EXPORT_REMINDER_KEY, JSON.stringify(raw));
+  }catch(e){}
+  const b=document.getElementById('export-banner');
+  if(b)b.style.display='none';
+}
+function updateExportBanner(){
+  const b=document.getElementById('export-banner');
+  if(!b)return;
+  let info={};
+  try{info=JSON.parse(localStorage.getItem(EXPORT_REMINDER_KEY)||'{}');}catch(e){}
+  const now=Date.now();
+  if(info.snoozeUntil&&now<info.snoozeUntil){b.style.display='none';return;}
+
+  const lastExportAt=info.lastExportAt||0;
+  const lastExportCount=info.lastExportCount||0;
+  const newEntries=auditLog.length-lastExportCount;
+  const msSinceExport=now-lastExportAt;
+
+  // Nothing to export yet, or never needed a reminder
+  if(auditLog.length===0){b.style.display='none';return;}
+  // First-ever use: only nag once enough activity has accumulated
+  if(!lastExportAt&&auditLog.length<EXPORT_REMIND_AFTER_COUNT){b.style.display='none';return;}
+
+  const dueByTime=lastExportAt>0&&msSinceExport>=EXPORT_REMIND_AFTER_MS;
+  const dueByCount=newEntries>=EXPORT_REMIND_AFTER_COUNT;
+  const neverExported=!lastExportAt&&auditLog.length>=EXPORT_REMIND_AFTER_COUNT;
+
+  if(!dueByTime&&!dueByCount&&!neverExported){b.style.display='none';return;}
+
+  // Build message
+  const urgent=dueByCount&&newEntries>=EXPORT_REMIND_AFTER_COUNT*2;
+  b.classList.toggle('urgent',urgent);
+  const sub=document.getElementById('export-banner-sub');
+  const title=document.getElementById('export-banner-title');
+  if(neverExported){
+    title.textContent='No Backup Taken Yet';
+    sub.textContent=`${auditLog.length} record${auditLog.length===1?'':'s'} logged with no PDF export so far.`;
+  } else if(dueByCount){
+    title.textContent='Backup Reminder';
+    sub.textContent=`${newEntries} new record${newEntries===1?'':'s'} since your last export.`;
+  } else {
+    const hrs=Math.floor(msSinceExport/3600000);
+    title.textContent='Backup Reminder';
+    sub.textContent=`It's been ${hrs}+ hour${hrs===1?'':'s'} since your last export.`;
+  }
+  b.style.display='flex';
 }
 
 // ─── ISSUE KEYS ───────────────────────────────────────────
@@ -2075,6 +2170,8 @@ function tick(){
   const now=new Date();
   document.getElementById('clock-time').textContent=now.toTimeString().slice(0,8);
   document.getElementById('clock-date').textContent=now.toLocaleDateString('en-GB',{weekday:'short',day:'2-digit',month:'short',year:'numeric'}).toUpperCase();
+  // Re-check backup reminder banner once a minute (time-based trigger doesn't need per-second polling)
+  if(now.getSeconds()===0)updateExportBanner();
   vehicles.filter(v=>!v.nil).forEach(v=>{
     const st=state[v.id];const el=document.getElementById('sw-'+v.id);if(!el)return;
     el.textContent=st.status==='out'?sw(st.since):elapsed(st.since)+' ago';
@@ -2788,6 +2885,7 @@ window._hydratePatched && window._hydratePatched();
 
 renderAll();
 tick();
+updateExportBanner();
 setInterval(tick, 1000);
 
 initAllSigs();
