@@ -610,47 +610,47 @@ body.is-admin .admin-only{display:flex;}
       <div class="clock-time" id="clock-time">--:--:--</div>
       <div class="clock-date" id="clock-date">---</div>
     </div>
-    <button class="hbtn" onclick="openAllLogs()">
-      <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="1" width="10" height="12" rx="1.5"/><line x1="4.5" y1="4.5" x2="9.5" y2="4.5"/><line x1="4.5" y1="7" x2="9.5" y2="7"/><line x1="4.5" y1="9.5" x2="7" y2="9.5"/></svg>
+    <button class="hbtn">
+      <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="1" width="10" height="12" rx="1.5"></rect><line x1="4.5" y1="4.5" x2="9.5" y2="4.5"></line><line x1="4.5" y1="7" x2="9.5" y2="7"></line><line x1="4.5" y1="9.5" x2="7" y2="9.5"></line></svg>
       Records
     </button>
-    <button class="hbtn" id="btn-fleet-mgr" onclick="openFleetMgr()" title="Manage fleet">
-      <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="12" height="8" rx="1.5"/><line x1="4" y1="3" x2="4" y2="11"/><line x1="10" y1="3" x2="10" y2="11"/><line x1="1" y1="7" x2="13" y2="7"/></svg>
+    <button class="hbtn" id="btn-fleet-mgr" title="Manage fleet">
+      <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="12" height="8" rx="1.5"></rect><line x1="4" y1="3" x2="4" y2="11"></line><line x1="10" y1="3" x2="10" y2="11"></line><line x1="1" y1="7" x2="13" y2="7"></line></svg>
       Fleet
     </button>
-    <button class="hbtn" id="btn-dummy" onclick="addDummyRecords()" style="border-color:rgba(167,139,250,.4);color:var(--offrun);">
-      <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="7" r="5.5"/><line x1="7" y1="4" x2="7" y2="7"/><line x1="7" y1="9.5" x2="7" y2="10"/></svg>
+    <button class="hbtn" id="btn-dummy" style="border-color:rgba(167,139,250,.4);color:var(--offrun);">
+      <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="7" r="5.5"></circle><line x1="7" y1="4" x2="7" y2="7"></line><line x1="7" y1="9.5" x2="7" y2="10"></line></svg>
       Dummy
     </button>
-    <button class="hbtn" id="btn-clear-all" onclick="confirmClearAll()" style="border-color:rgba(224,82,82,.35);color:var(--danger);">
-      <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="2,4 12,4"/><path d="M5,4V2h4v2"/><rect x="3" y="4" width="8" height="8" rx="1"/><line x1="5.5" y1="7" x2="5.5" y2="10"/><line x1="8.5" y1="7" x2="8.5" y2="10"/></svg>
+    <button class="hbtn" id="btn-clear-all" style="border-color:rgba(224,82,82,.35);color:var(--danger);">
+      <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="2,4 12,4"></polyline><path d="M5,4V2h4v2"></path><rect x="3" y="4" width="8" height="8" rx="1"></rect><line x1="5.5" y1="7" x2="5.5" y2="10"></line><line x1="8.5" y1="7" x2="8.5" y2="10"></line></svg>
       Clear All
     </button>
-    <button class="hbtn" id="btn-clear-logs" onclick="confirmClearAllLogs()" style="border-color:rgba(224,82,82,.35);color:var(--danger);">
-      <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="1" width="10" height="12" rx="1.5"/><line x1="4.5" y1="4.5" x2="9.5" y2="4.5"/><line x1="4.5" y1="7" x2="9.5" y2="7"/><line x1="4.5" y1="9.5" x2="7" y2="9.5"/><line x1="9" y1="8.5" x2="12" y2="11.5" stroke-width="1.8"/></svg>
+    <button class="hbtn" id="btn-clear-logs" style="border-color:rgba(224,82,82,.35);color:var(--danger);">
+      <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="1" width="10" height="12" rx="1.5"></rect><line x1="4.5" y1="4.5" x2="9.5" y2="4.5"></line><line x1="4.5" y1="7" x2="9.5" y2="7"></line><line x1="4.5" y1="9.5" x2="7" y2="9.5"></line><line x1="9" y1="8.5" x2="12" y2="11.5" stroke-width="1.8"></line></svg>
       Clear Logs
     </button>
-    <button class="hbtn" onclick="toggleTheme()" id="theme-btn">
-      <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" id="theme-icon"><circle cx="7" cy="7" r="2.5"/><line x1="7" y1="1" x2="7" y2="2.5"/><line x1="7" y1="11.5" x2="7" y2="13"/><line x1="1" y1="7" x2="2.5" y2="7"/><line x1="11.5" y1="7" x2="13" y2="7"/></svg>
+    <button class="hbtn" id="theme-btn">
+      <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" id="theme-icon"><circle cx="7" cy="7" r="2.5"></circle><line x1="7" y1="1" x2="7" y2="2.5"></line><line x1="7" y1="11.5" x2="7" y2="13"></line><line x1="1" y1="7" x2="2.5" y2="7"></line><line x1="11.5" y1="7" x2="13" y2="7"></line></svg>
       <span id="th-lbl">Light</span>
     </button>
   </div>
 </header>
 
 <div class="stats">
-  <div class="stat" id="fil-all" onclick="setFilter('all')">
+  <div class="stat" id="fil-all">
     <div class="stat-pip pip-total"></div>
     <div><div class="stat-n n-total" id="cnt-total">0</div><div class="stat-lbl">Total Fleet</div></div>
   </div>
-  <div class="stat" id="fil-in" onclick="setFilter('in')">
+  <div class="stat" id="fil-in">
     <div class="stat-pip pip-in"></div>
     <div><div class="stat-n n-in" id="cnt-in">0</div><div class="stat-lbl">In Keypress</div></div>
   </div>
-  <div class="stat" id="fil-out" onclick="setFilter('out')">
+  <div class="stat" id="fil-out">
     <div class="stat-pip pip-out"></div>
     <div><div class="stat-n n-out" id="cnt-out">0</div><div class="stat-lbl">Loaned Out</div></div>
   </div>
-  <div class="stat" id="fil-offrun" onclick="setFilter('offrun')">
+  <div class="stat" id="fil-offrun">
     <div class="stat-pip pip-offrun"></div>
     <div><div class="stat-n n-offrun" id="cnt-offrun">0</div><div class="stat-lbl">Off-Run</div></div>
   </div>
@@ -665,14 +665,14 @@ body.is-admin .admin-only{display:flex;}
   <div class="closing-countdown" id="closing-countdown"></div>
 </div>
 
-<div class="export-banner" id="export-banner" style="display:none;" onclick="exportLogPDF();dismissExportBanner();">
+<div class="export-banner" id="export-banner" style="display:none;">
   <div class="export-banner-icon" id="export-banner-icon">📤</div>
   <div class="export-banner-text">
     <div class="export-banner-title" id="export-banner-title">Backup Reminder</div>
     <div class="export-banner-sub" id="export-banner-sub">A number of records haven't been exported yet.</div>
   </div>
-  <button class="export-banner-cta" onclick="event.stopPropagation();exportLogPDF();dismissExportBanner();">⬇ Save PDF</button>
-  <div class="export-banner-dismiss" onclick="event.stopPropagation();dismissExportBanner();" title="Dismiss for now">✕</div>
+  <button class="export-banner-cta">⬇ Save PDF</button>
+  <div class="export-banner-dismiss" title="Dismiss for now">✕</div>
 </div>
 
 <div class="midnight-banner" id="midnight-banner" style="display:none;">
@@ -689,7 +689,7 @@ body.is-admin .admin-only{display:flex;}
     <div class="bulk-banner-title">First Parade / Bulk Loan Out</div>
     <div class="bulk-banner-sub">All keys in keypress. Loan out all at once for morning parade.</div>
   </div>
-  <button class="bulk-banner-btn" onclick="openBulkModal()">Loan Out All</button>
+  <button class="bulk-banner-btn">Loan Out All</button>
 </div>
 
 <!-- ── KEYPRESS CLOSE BAR ── -->
@@ -699,30 +699,30 @@ body.is-admin .admin-only{display:flex;}
     <div class="kp-close-bar-title">Close Keypress</div>
     <div class="kp-close-bar-sub" id="kp-close-bar-sub">Transport driver sign-off required.</div>
   </div>
-  <button class="kp-close-bar-btn" onclick="openKpCloseModal()">Close Keypress →</button>
+  <button class="kp-close-bar-btn">Close Keypress →</button>
 </div>
 
 <div class="toolbar">
   <div class="sec-label">Fleet Keys</div>
   <div class="sort-pills" id="sort-pills">
-    <button class="sort-pill active" data-sort="default" data-label="Default" onclick="setSortMode('default')">Default</button>
-    <button class="sort-pill" data-sort="az" data-label="A–Z" onclick="setSortMode('az')">A–Z</button>
-    <button class="sort-pill" data-sort="status" data-label="Status" onclick="setSortMode('status')">Status</button>
-    <button class="sort-pill" data-sort="reg" data-label="Reg" onclick="setSortMode('reg')">Reg</button>
-    <button class="sort-pill" data-sort="keyno" data-label="Key No." onclick="setSortMode('keyno')">Key No.</button>
+    <button class="sort-pill active" data-sort="default" data-label="Default">Default</button>
+    <button class="sort-pill" data-sort="az" data-label="A–Z">A–Z</button>
+    <button class="sort-pill" data-sort="status" data-label="Status">Status</button>
+    <button class="sort-pill" data-sort="reg" data-label="Reg">Reg</button>
+    <button class="sort-pill" data-sort="keyno" data-label="Key No.">Key No.</button>
   </div>
-  <select class="sel" id="filter-sel" onchange="setFilterDropdown(this.value)">
+  <select class="sel" id="filter-sel">
     <option value="all">All</option>
     <option value="in">In Keypress</option>
     <option value="out">Loaned Out</option>
     <option value="offrun">Off-Run</option>
   </select>
   <div class="view-grp">
-    <button class="hbtn active" id="btn-grid" onclick="setView('grid')" title="Grid view">
-      <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="1" width="5" height="5" rx="1"/><rect x="8" y="1" width="5" height="5" rx="1"/><rect x="1" y="8" width="5" height="5" rx="1"/><rect x="8" y="8" width="5" height="5" rx="1"/></svg>
+    <button class="hbtn active" id="btn-grid" title="Grid view">
+      <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="1" width="5" height="5" rx="1"></rect><rect x="8" y="1" width="5" height="5" rx="1"></rect><rect x="1" y="8" width="5" height="5" rx="1"></rect><rect x="8" y="8" width="5" height="5" rx="1"></rect></svg>
     </button>
-    <button class="hbtn" id="btn-row" onclick="setView('row')" title="List view">
-      <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="1" y1="3" x2="13" y2="3"/><line x1="1" y1="7" x2="13" y2="7"/><line x1="1" y1="11" x2="13" y2="11"/></svg>
+    <button class="hbtn" id="btn-row" title="List view">
+      <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="1" y1="3" x2="13" y2="3"></line><line x1="1" y1="7" x2="13" y2="7"></line><line x1="1" y1="11" x2="13" y2="11"></line></svg>
     </button>
   </div>
 </div>
@@ -733,44 +733,44 @@ body.is-admin .admin-only{display:flex;}
 <div class="hint">CLICK CARD ACTIONS TO CHANGE STATUS · CLICK LOCATION TO EDIT · STAT CARDS FILTER · ALL DATA PERSISTS LOCALLY</div>
 
 <!-- ── LOG OVERLAYS ── -->
-<div class="log-overlay" id="log-ov" onclick="if(event.target===this)closeLog()">
+<div class="log-overlay" id="log-ov">
   <div class="log-panel">
     <div class="log-hdr">
       <div><div class="log-title" id="log-t">Record</div><div class="log-sub" id="log-s"></div></div>
       <div style="display:flex;gap:6px;align-items:center;">
-        <button class="log-toolbar-btn danger-btn" id="log-clear-btn" onclick="confirmClearVehicleLog()" style="font-size:9px;padding:4px 9px;">🗑 Clear Log</button>
-        <button class="mclose" onclick="closeLog()">Close</button>
+        <button class="log-toolbar-btn danger-btn" id="log-clear-btn" style="font-size:9px;padding:4px 9px;">🗑 Clear Log</button>
+        <button class="mclose">Close</button>
       </div>
     </div>
     <div class="log-body" id="log-b"></div>
   </div>
 </div>
-<div class="log-overlay" id="alllog-ov" onclick="if(event.target===this)closeAllLog()">
+<div class="log-overlay" id="alllog-ov">
   <div class="all-log-panel">
     <div class="log-hdr">
       <div><div class="log-title">All Keypress Records</div><div class="log-sub">Complete custody log — click a record to view full details</div></div>
-      <button class="mclose" onclick="closeAllLog()">Close</button>
+      <button class="mclose">Close</button>
     </div>
     <div class="log-toolbar">
       <span class="log-date-lbl">📅 Date</span>
       <div class="custom-datepicker" id="cdp-log" style="position:relative;">
-        <button type="button" class="cdp-display" onclick="toggleDatePicker('cdp-log')" id="cdp-log-display" style="min-width:130px;">All dates…</button>
+        <button type="button" class="cdp-display" id="cdp-log-display" style="min-width:130px;">All dates…</button>
         <div class="cdp-panel" id="cdp-log-panel" style="z-index:9999;">
           <div class="cdp-nav">
-            <button type="button" class="cdp-nav-btn" onclick="cdpPrevMonth('cdp-log')">‹</button>
+            <button type="button" class="cdp-nav-btn">‹</button>
             <span class="cdp-month-lbl" id="cdp-log-lbl"></span>
-            <button type="button" class="cdp-nav-btn" onclick="cdpNextMonth('cdp-log')">›</button>
+            <button type="button" class="cdp-nav-btn">›</button>
           </div>
           <div class="cdp-dow-row"><span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span></div>
           <div class="cdp-days" id="cdp-log-days"></div>
           <div class="cdp-footer">
-            <button type="button" class="cdp-clear-btn" onclick="clearLogDatePicker()">All Dates</button>
-            <button type="button" class="cdp-done-btn" onclick="toggleDatePicker('cdp-log')">Done</button>
+            <button type="button" class="cdp-clear-btn">All Dates</button>
+            <button type="button" class="cdp-done-btn">Done</button>
           </div>
         </div>
       </div>
-      <button class="log-toolbar-btn pdf-btn" onclick="exportLogPDF()">⬇ Save PDF</button>
-      <button class="log-toolbar-btn danger-btn" onclick="confirmClearAllLogs()">🗑 Clear All Logs</button>
+      <button class="log-toolbar-btn pdf-btn">⬇ Save PDF</button>
+      <button class="log-toolbar-btn danger-btn">🗑 Clear All Logs</button>
       <span class="log-count-badge" id="alllog-count"></span>
     </div>
     <div class="log-filters" id="alllog-filters"></div>
@@ -779,22 +779,22 @@ body.is-admin .admin-only{display:flex;}
 </div>
 
 <!-- ── RECORD VIEW MODAL ── -->
-<div class="overlay" id="ov-record" onclick="if(event.target===this)closeRecord()">
+<div class="overlay" id="ov-record">
   <div class="modal record-modal">
     <div class="mhdr">
       <div><div class="mtitle" id="rv-title">Issue Record</div><div class="msub" id="rv-sub"></div></div>
-      <button class="mclose" onclick="closeRecord()">Close</button>
+      <button class="mclose">Close</button>
     </div>
     <div class="mbody" id="rv-body"></div>
   </div>
 </div>
 
 <!-- ── ISSUE KEYS MODAL ── -->
-<div class="overlay" id="ov-issue" onclick="if(event.target===this)closeIssue()">
+<div class="overlay" id="ov-issue">
   <div class="modal" style="width:520px;">
     <div class="mhdr">
       <div><div class="mtitle" id="issue-title">Loan Out Keys</div><div class="msub" id="issue-sub"></div></div>
-      <button class="mclose" onclick="closeIssue()">Cancel</button>
+      <button class="mclose">Cancel</button>
     </div>
     <div class="mbody">
       <!-- KEY DETAILS -->
@@ -803,14 +803,14 @@ body.is-admin .admin-only{display:flex;}
         <div class="fg">
           <label class="fl">No. of Keys in Bunch</label>
           <div class="kc-track" id="kc-track">
-            <button type="button" class="kc-slot" data-n="1" onclick="setKeyCount(1)">1</button>
-            <button type="button" class="kc-slot" data-n="2" onclick="setKeyCount(2)">2</button>
-            <button type="button" class="kc-slot" data-n="3" onclick="setKeyCount(3)">3</button>
-            <button type="button" class="kc-slot" data-n="4" onclick="setKeyCount(4)">4</button>
-            <button type="button" class="kc-slot" data-n="5" onclick="setKeyCount(5)">5</button>
-            <button type="button" class="kc-slot" data-n="6" onclick="setKeyCount(6)">6</button>
-            <div class="kc-slot kc-slot-custom" id="kc-custom-slot" onclick="kcFocusCustom()">
-              <input type="number" id="i-keycount" min="1" max="100" placeholder="…" oninput="kcCustomInput()" onblur="kcCustomBlur()" onkeydown="kcCustomKey(event)">
+            <button type="button" class="kc-slot" data-n="1">1</button>
+            <button type="button" class="kc-slot" data-n="2">2</button>
+            <button type="button" class="kc-slot" data-n="3">3</button>
+            <button type="button" class="kc-slot" data-n="4">4</button>
+            <button type="button" class="kc-slot" data-n="5">5</button>
+            <button type="button" class="kc-slot" data-n="6">6</button>
+            <div class="kc-slot kc-slot-custom" id="kc-custom-slot">
+              <input type="number" id="i-keycount" min="1" max="100" placeholder="…">
             </div>
           </div>
         </div>
@@ -828,25 +828,25 @@ body.is-admin .admin-only{display:flex;}
           <div class="sig-wrap" id="sig-wrap-borrow">
             <canvas class="sig-canvas" id="sig-borrow" height="110"></canvas>
             <div class="sig-placeholder" id="sig-ph-borrow"><span>✍ Sign here</span></div>
-            <button class="sig-clear-tr" onclick="clearSig('sig-borrow')">Clear</button><button class="sig-expand-br" onclick="openSigModal('sig-borrow')" title="Expand">⛶ Expand</button>
+            <button class="sig-clear-tr">Clear</button><button class="sig-expand-br" title="Expand">⛶ Expand</button>
           </div>
           <div class="sig-label" id="sig-lbl-borrow">Draw signature above</div>
         </div>
         <div class="fg" style="margin-top:8px;">
           <label class="fl">Expected Return (optional)</label>
           <div class="custom-datepicker" id="cdp-issue">
-            <button type="button" class="cdp-display" onclick="toggleDatePicker('cdp-issue')" id="cdp-issue-display">Select date…</button>
+            <button type="button" class="cdp-display" id="cdp-issue-display">Select date…</button>
             <div class="cdp-panel" id="cdp-issue-panel">
               <div class="cdp-nav">
-                <button type="button" class="cdp-nav-btn" onclick="cdpPrevMonth('cdp-issue')">‹</button>
+                <button type="button" class="cdp-nav-btn">‹</button>
                 <span class="cdp-month-lbl" id="cdp-issue-lbl"></span>
-                <button type="button" class="cdp-nav-btn" onclick="cdpNextMonth('cdp-issue')">›</button>
+                <button type="button" class="cdp-nav-btn">›</button>
               </div>
               <div class="cdp-dow-row"><span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span></div>
               <div class="cdp-days" id="cdp-issue-days"></div>
               <div class="cdp-footer">
-                <button type="button" class="cdp-today-btn" onclick="cdpSelectToday('cdp-issue')">Today</button>
-                <button type="button" class="cdp-clear-btn" onclick="clearDatePicker('cdp-issue')">Clear</button>
+                <button type="button" class="cdp-today-btn">Today</button>
+                <button type="button" class="cdp-clear-btn">Clear</button>
               </div>
             </div>
           </div>
@@ -864,25 +864,25 @@ body.is-admin .admin-only{display:flex;}
           <div class="sig-wrap" id="sig-wrap-ops-issue">
             <canvas class="sig-canvas" id="sig-ops-issue" height="110"></canvas>
             <div class="sig-placeholder" id="sig-ph-ops-issue"><span>✍ Sign here</span></div>
-            <button class="sig-clear-tr" onclick="clearSig('sig-ops-issue')">Clear</button><button class="sig-expand-br" onclick="openSigModal('sig-ops-issue')" title="Expand">⛶ Expand</button>
+            <button class="sig-clear-tr">Clear</button><button class="sig-expand-br" title="Expand">⛶ Expand</button>
           </div>
           <div class="sig-label" id="sig-lbl-ops-issue">Draw signature above</div>
         </div>
       </div>
     </div>
     <div class="mfooter">
-      <button class="bcancel" onclick="closeIssue()">Cancel</button>
-      <button class="bprimary bp-out" onclick="applyIssue()">Loan Out →</button>
+      <button class="bcancel">Cancel</button>
+      <button class="bprimary bp-out">Loan Out →</button>
     </div>
   </div>
 </div>
 
 <!-- ── QUICK ISSUE MODAL ── -->
-<div class="overlay" id="ov-quick" onclick="if(event.target===this)closeQuick()">
+<div class="overlay" id="ov-quick">
   <div class="modal" style="width:420px;">
     <div class="mhdr">
       <div><div class="mtitle" id="quick-title">Quick Issue</div><div class="msub" id="quick-sub">Informal / Internal</div></div>
-      <button class="mclose" onclick="closeQuick()">Cancel</button>
+      <button class="mclose">Cancel</button>
     </div>
     <div class="mbody">
       <div class="fsec-block sec-borrow">
@@ -895,18 +895,18 @@ body.is-admin .admin-only{display:flex;}
       </div>
     </div>
     <div class="mfooter">
-      <button class="bcancel" onclick="closeQuick()">Cancel</button>
-      <button class="bprimary bp-out" onclick="applyQuickIssue()">Loan Out →</button>
+      <button class="bcancel">Cancel</button>
+      <button class="bprimary bp-out">Loan Out →</button>
     </div>
   </div>
 </div>
 
 <!-- ── BULK ISSUE MODAL ── -->
-<div class="overlay" id="ov-bulk" onclick="if(event.target===this)closeBulk()">
+<div class="overlay" id="ov-bulk">
   <div class="modal" style="width:440px;">
     <div class="mhdr">
       <div><div class="mtitle">Bulk Issue</div><div class="msub">Loans out all in-keypress vehicles at once</div></div>
-      <button class="mclose" onclick="closeBulk()">Cancel</button>
+      <button class="mclose">Cancel</button>
     </div>
     <div class="mbody">
       <div class="fsec-block sec-do">
@@ -921,18 +921,18 @@ body.is-admin .admin-only{display:flex;}
       </div>
     </div>
     <div class="mfooter">
-      <button class="bcancel" onclick="closeBulk()">Cancel</button>
-      <button class="bprimary bp-out" onclick="applyBulk()">Loan Out All →</button>
+      <button class="bcancel">Cancel</button>
+      <button class="bprimary bp-out">Loan Out All →</button>
     </div>
   </div>
 </div>
 
 <!-- ── RETURN KEYS MODAL ── -->
-<div class="overlay" id="ov-return" onclick="if(event.target===this)closeReturn()">
+<div class="overlay" id="ov-return">
   <div class="modal" style="width:520px;">
     <div class="mhdr">
       <div><div class="mtitle" id="return-title">Return to Keypress</div><div class="msub" id="return-sub"></div></div>
-      <button class="mclose" onclick="closeReturn()">Cancel</button>
+      <button class="mclose">Cancel</button>
     </div>
     <div class="mbody">
       <div id="return-summary"></div>
@@ -951,7 +951,7 @@ body.is-admin .admin-only{display:flex;}
           <div class="sig-wrap" id="sig-wrap-ret-person">
             <canvas class="sig-canvas" id="sig-ret-person" height="110"></canvas>
             <div class="sig-placeholder" id="sig-ph-ret-person"><span>✍ Sign here</span></div>
-            <button class="sig-clear-tr" onclick="clearSig('sig-ret-person')">Clear</button><button class="sig-expand-br" onclick="openSigModal('sig-ret-person')" title="Expand">⛶ Expand</button>
+            <button class="sig-clear-tr">Clear</button><button class="sig-expand-br" title="Expand">⛶ Expand</button>
           </div>
           <div class="sig-label" id="sig-lbl-ret-person">Draw signature above</div>
         </div>
@@ -968,7 +968,7 @@ body.is-admin .admin-only{display:flex;}
           <div class="sig-wrap" id="sig-wrap-ret-ops">
             <canvas class="sig-canvas" id="sig-ret-ops" height="110"></canvas>
             <div class="sig-placeholder" id="sig-ph-ret-ops"><span>✍ Sign here</span></div>
-            <button class="sig-clear-tr" onclick="clearSig('sig-ret-ops')">Clear</button><button class="sig-expand-br" onclick="openSigModal('sig-ret-ops')" title="Expand">⛶ Expand</button>
+            <button class="sig-clear-tr">Clear</button><button class="sig-expand-br" title="Expand">⛶ Expand</button>
           </div>
           <div class="sig-label" id="sig-lbl-ret-ops">Draw signature above</div>
         </div>
@@ -976,18 +976,18 @@ body.is-admin .admin-only{display:flex;}
       </div>
     </div>
     <div class="mfooter">
-      <button class="bcancel" onclick="closeReturn()">Cancel</button>
-      <button class="bprimary bp-in" onclick="applyReturn()">Return to Keypress</button>
+      <button class="bcancel">Cancel</button>
+      <button class="bprimary bp-in">Return to Keypress</button>
     </div>
   </div>
 </div>
 
 <!-- ── OFF-RUN MODAL ── -->
-<div class="overlay" id="ov-offrun" onclick="if(event.target===this)closeOffrun()">
+<div class="overlay" id="ov-offrun">
   <div class="modal" style="width:400px;">
     <div class="mhdr">
       <div><div class="mtitle" id="offrun-title">Set Off-Run</div><div class="msub" id="offrun-sub"></div></div>
-      <button class="mclose" onclick="closeOffrun()">Cancel</button>
+      <button class="mclose">Cancel</button>
     </div>
     <div class="mbody">
       <div class="fsec-block sec-neutral" style="border-bottom:none;">
@@ -1000,1902 +1000,15 @@ body.is-admin .admin-only{display:flex;}
       </div>
     </div>
     <div class="mfooter">
-      <button class="bcancel" onclick="closeOffrun()">Cancel</button>
-      <button class="bprimary bp-offrun" onclick="applyOffrun()">Confirm Off-Run</button>
+      <button class="bcancel">Cancel</button>
+      <button class="bprimary bp-offrun">Confirm Off-Run</button>
     </div>
   </div>
 </div>
 
 <div id="print-area"></div>
 
-<script>
-const SK='ops_keypress_v3';
-function _basePersist(){
-  try{
-    localStorage.setItem(SK,JSON.stringify({
-      state:Object.fromEntries(Object.entries(state)),
-      records,auditLog:auditLog.slice(0,500),
-      viewMode,sortMode,sortDir,filterMode,
-      locs:vehicles.map(v=>({id:v.id,loc:v.location}))
-    }));
-  }catch(e){}
-}
-function hydrate(){
-  try{
-    const d=JSON.parse(localStorage.getItem(SK)||'null');
-    if(!d)return;
-    (d.locs||[]).forEach(l=>{const v=vehicles.find(x=>x.id===l.id);if(v)v.location=l.loc;});
-    Object.entries(d.state||{}).forEach(([k,s])=>{const id=+k;if(state[id])Object.assign(state[id],s);});
-    if(d.records)Object.assign(records,d.records);
-    if(d.auditLog)auditLog.push(...d.auditLog);
-    if(d.viewMode)viewMode=d.viewMode;
-    if(d.sortMode)sortMode=d.sortMode;
-    if(d.sortDir)sortDir=d.sortDir;
-    if(d.filterMode)filterMode=d.filterMode;
-  }catch(e){}
-}
 
-// ─── DATA ────────────────────────────────────────────────
-const vehicles=[
-  {id:1,  vehicle:"FCV",               reg:"XE7069X", location:"YARD",        bunchNo:"1"},
-  {id:2,  vehicle:"P3 MINIBUS",        reg:"PA9740T", location:"SERVICING",   bunchNo:"2"},
-  {id:3,  vehicle:"P3 TURNOUT",        reg:"PD667R",  location:"BASEMENT",    bunchNo:"3"},
-  {id:4,  vehicle:"SUV",               reg:"QX2156T", location:"BASEMENT",    bunchNo:"4"},
-  {id:5,  vehicle:"IV",                reg:"QX1167T", location:"BASEMENT",    bunchNo:"5"},
-  {id:6,  vehicle:"P3 MINIBUS",        reg:"YP4525X", location:"YARD",        bunchNo:"6"},
-  {id:7,  vehicle:"TONNER",            reg:"YN5398A", location:"YARD",        bunchNo:"7"},
-  {id:8,  vehicle:"TONNER",            reg:"YP4727E", location:"STN45",       bunchNo:"8"},
-  {id:9,  vehicle:"CL3 LORRY",         reg:"YN4422U", location:"YARD",        bunchNo:"9"},
-  {id:10, vehicle:"TONNER",            reg:"YP2997E", location:"YARD",        bunchNo:"10"},
-  {id:11, vehicle:"DSA TAILGATE",      reg:"YP3265C", location:"YARD",        bunchNo:"11"},
-  {id:12, vehicle:"CL3 LORRY",         reg:"YN3909P", location:"YARD",        bunchNo:"12"},
-  {id:13, vehicle:"DOUBLE CAB",        reg:"YP2975T", location:"LOADING BAY", bunchNo:"13"},
-  {id:14, vehicle:"TAILGATE",          reg:"YN3912D", location:"LOADING BAY", bunchNo:"14"},
-  {id:15, vehicle:"ALL VEHICLE",       reg:"BLACKBOX", location:"OPS",        bunchNo:"15"},
-  {id:16, vehicle:"DOUBLE CAB",        reg:"PD1019E", location:"YARD",        bunchNo:"16"},
-  {id:17, vehicle:"P3 TURNOUT",        reg:"YN4240C", location:"YARD",        bunchNo:"17"},
-  {id:18, vehicle:"DOUBLE CAB",        reg:"YP3526A", location:"YARD",        bunchNo:"18"},
-  {id:19, vehicle:"CDA1",              reg:"CDA1",    location:"CDA",         bunchNo:"CDA1"},
-  {id:20, vehicle:"CDA2",              reg:"CDA2",    location:"CDA",         bunchNo:"CDA2"},
-  {id:21, vehicle:"CDA3",              reg:"CDA3",    location:"CDA",         bunchNo:"CDA3"},
-];
-const state={};
-const records={};   // id -> current issue record (cleared on return)
-const auditLog=[];  // all history
-let viewMode='grid',sortMode='default',sortDir='asc',filterMode='all';
-let pendingId=null;
-
-vehicles.forEach(v=>{
-  state[v.id]={status:'in',since:Date.now(),location:v.location,remarks:'',offrunReason:'',offrunFrom:'',offrunUntil:''};
-});
-// hydrate() replaced by _hydratePatched below (after CRUD JS), which also restores customVehicles
-
-// ─── HELPERS ─────────────────────────────────────────────
-function ico(v){
-  const u=v.toUpperCase();
-  if(u.includes('BUS'))return'🚌';
-  if(u.includes('LORRY')||u.includes('CL3'))return'🚛';
-  if(u.includes('SUV'))return'🚙';
-  if(u.includes('CAB'))return'🛻';
-  if(u.includes('FCV'))return'🚒';
-  if(u.includes('IV'))return'🚐';
-  return'🚗';
-}
-function fmtDT(ts){
-  const d=new Date(ts);
-  return d.toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'})+' '+
-         d.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit',second:'2-digit'});
-}
-function fmtD(s){
-  if(!s)return'';
-  const d=new Date(s+'T00:00:00');
-  return d.toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'});
-}
-function elapsed(ts){
-  const s=Math.floor((Date.now()-ts)/1000);
-  if(s<60)return s+'s';
-  if(s<3600)return Math.floor(s/60)+'m '+Math.floor(s%60)+'s';
-  if(s<86400)return Math.floor(s/3600)+'h '+Math.floor((s%3600)/60)+'m';
-  return Math.floor(s/86400)+'d '+Math.floor((s%86400)/3600)+'h';
-}
-function sw(ts){
-  const s=Math.floor((Date.now()-ts)/1000);
-  const h=Math.floor(s/3600),m=Math.floor((s%3600)/60),sc=s%60;
-  return(h?String(h).padStart(2,'0')+':':'')+String(m).padStart(2,'0')+':'+String(sc).padStart(2,'0');
-}
-function statusLabel(st){return{in:'IN KEYPRESS',out:'LOANED OUT',offrun:'OFF-RUN'}[st.status]||'—';}
-function addLog(id,toStatus,toLabel,detail='',recSnapshot=null){
-  const v=vehicles.find(x=>x.id===id);
-  const by=_actionBy||null;
-  _actionBy=null; // reset after use
-  auditLog.unshift({ts:Date.now(),id,toStatus,toLabel,vehicle:v?v.vehicle:'SYSTEM',reg:v?v.reg:'',detail,rec:recSnapshot,by});
-  updateExportBanner();
-}
-
-// ─── SIGNATURE PAD ────────────────────────────────────────
-const sigPads={};
-
-// ── HIGH-PERFORMANCE SIGNATURE ENGINE ──
-// Layer 1: Pointer Events + getCoalescedEvents (best, modern browsers)
-// Layer 2: Pointer Events without coalescing (fallback)
-// Layer 3: Mouse Events (legacy/corporate fallback)
-// Layer 4: Touch Events (mobile fallback)
-// All layers use quadratic Bézier smoothing for fluid lines.
-function _setupSigCanvas(canvas,canvasId,cssHeight){
-  // Guard: if canvas hasn't laid out yet, offsetWidth may be 0.
-  // Use a known minimum so the canvas is never degenerate.
-  const cssW=Math.max(canvas.offsetWidth||0, canvas.parentElement&&canvas.parentElement.offsetWidth||0, 300);
-  const dpr=Math.max(window.devicePixelRatio||1, 1);
-  canvas.width=cssW*dpr;
-  canvas.height=cssHeight*dpr;
-  // Force CSS size explicitly so canvas doesn't collapse
-  canvas.style.width=cssW+'px';
-  canvas.style.height=cssHeight+'px';
-
-  const ctx=canvas.getContext('2d');
-  ctx.scale(dpr,dpr);
-  const isLight=document.documentElement.classList.contains('light');
-  ctx.strokeStyle=isLight?'#1e293b':'#e2e8f0';
-  ctx.lineWidth=2.2;ctx.lineCap='round';ctx.lineJoin='round';
-
-  let drawing=false,points=[];
-
-  const ptFromEvent=(e)=>{
-    const r=canvas.getBoundingClientRect();
-    // Clamp to canvas bounds to prevent out-of-range coords on slow PCs
-    return{
-      x:Math.max(0,Math.min((e.clientX-r.left), cssW)),
-      y:Math.max(0,Math.min((e.clientY-r.top), cssHeight))
-    };
-  };
-
-  const flushPoints=(pts)=>{
-    if(pts.length<2)return;
-    ctx.beginPath();
-    ctx.moveTo(pts[0].x,pts[0].y);
-    for(let i=1;i<pts.length-1;i++){
-      const mx=(pts[i].x+pts[i+1].x)/2;
-      const my=(pts[i].y+pts[i+1].y)/2;
-      ctx.quadraticCurveTo(pts[i].x,pts[i].y,mx,my);
-    }
-    ctx.lineTo(pts[pts.length-1].x,pts[pts.length-1].y);
-    ctx.stroke();
-  };
-
-  // ── POINTER EVENT HANDLERS (Layer 1 & 2) ──
-  const onPointerDown=(e)=>{
-    if(e.button!==undefined&&e.button!==0)return;
-    e.preventDefault();
-    // setPointerCapture can throw on some locked-down corporate browsers
-    try{canvas.setPointerCapture(e.pointerId);}catch(_){}
-    drawing=true;
-    const p=ptFromEvent(e);
-    points=[p];
-    ctx.beginPath();ctx.moveTo(p.x,p.y);
-  };
-
-  const onPointerMove=(e)=>{
-    if(!drawing)return;
-    e.preventDefault();
-    // getCoalescedEvents: safe try/catch in case browser blocks it
-    let evts=[e];
-    try{
-      if(typeof e.getCoalescedEvents==='function'){
-        const coalesced=e.getCoalescedEvents();
-        if(coalesced&&coalesced.length>0)evts=coalesced;
-      }
-    }catch(_){}
-    points.push(...evts.map(ptFromEvent));
-    if(points.length>=2){
-      flushPoints(points);
-      points=[points[points.length-1]];
-    }
-    if(canvasId!=='_modal_')updateSigState(canvasId);
-  };
-
-  const onPointerUp=(e)=>{
-    if(!drawing)return;
-    drawing=false;
-    if(points.length)flushPoints(points);
-    points=[];
-    if(canvasId!=='_modal_')updateSigState(canvasId);
-  };
-
-  // ── MOUSE EVENT HANDLERS (Layer 3 — legacy/corporate fallback) ──
-  // These fire on ALL browsers including locked-down IE-mode Edge
-  const onMouseDown=(e)=>{
-    if(e.button!==0)return;
-    // Only use mouse fallback if pointer events didn't fire
-    if(canvas._usingPointer)return;
-    e.preventDefault();
-    drawing=true;
-    const p=ptFromEvent(e);
-    points=[p];
-    ctx.beginPath();ctx.moveTo(p.x,p.y);
-  };
-  const onMouseMove=(e)=>{
-    if(canvas._usingPointer||!drawing)return;
-    e.preventDefault();
-    points.push(ptFromEvent(e));
-    if(points.length>=2){
-      flushPoints(points);
-      points=[points[points.length-1]];
-    }
-    if(canvasId!=='_modal_')updateSigState(canvasId);
-  };
-  const onMouseUp=(e)=>{
-    if(canvas._usingPointer||!drawing)return;
-    drawing=false;
-    if(points.length)flushPoints(points);
-    points=[];
-    if(canvasId!=='_modal_')updateSigState(canvasId);
-  };
-
-  // ── TOUCH EVENT HANDLERS (Layer 4 — mobile) ──
-  const onTouchStart=(e)=>{
-    if(canvas._usingPointer)return;
-    e.preventDefault();
-    drawing=true;
-    const t=e.touches[0];
-    const p=ptFromEvent({clientX:t.clientX,clientY:t.clientY});
-    points=[p];
-    ctx.beginPath();ctx.moveTo(p.x,p.y);
-  };
-  const onTouchMove=(e)=>{
-    if(canvas._usingPointer||!drawing)return;
-    e.preventDefault();
-    const t=e.touches[0];
-    points.push(ptFromEvent({clientX:t.clientX,clientY:t.clientY}));
-    if(points.length>=2){
-      flushPoints(points);
-      points=[points[points.length-1]];
-    }
-    if(canvasId!=='_modal_')updateSigState(canvasId);
-  };
-  const onTouchEnd=(e)=>{
-    if(canvas._usingPointer||!drawing)return;
-    drawing=false;
-    if(points.length)flushPoints(points);
-    points=[];
-    if(canvasId!=='_modal_')updateSigState(canvasId);
-  };
-
-  // Detect if Pointer Events are actually working; fall through to mouse if not
-  canvas._usingPointer=false;
-  const onPointerDownDetect=(e)=>{canvas._usingPointer=true;onPointerDown(e);};
-
-  // Clean up previous listeners
-  if(canvas._sigCleanup)canvas._sigCleanup();
-
-  // Attach all layers — pointer events take priority via _usingPointer flag
-  canvas.addEventListener('pointerdown',onPointerDownDetect);
-  canvas.addEventListener('pointermove',onPointerMove);
-  canvas.addEventListener('pointerup',onPointerUp);
-  canvas.addEventListener('pointercancel',onPointerUp);
-  canvas.addEventListener('pointerleave',onPointerUp);
-  canvas.addEventListener('mousedown',onMouseDown);
-  canvas.addEventListener('mousemove',onMouseMove);
-  canvas.addEventListener('mouseup',onMouseUp);
-  canvas.addEventListener('mouseleave',onMouseUp);
-  canvas.addEventListener('touchstart',onTouchStart,{passive:false});
-  canvas.addEventListener('touchmove',onTouchMove,{passive:false});
-  canvas.addEventListener('touchend',onTouchEnd);
-
-  canvas._sigCleanup=()=>{
-    canvas.removeEventListener('pointerdown',onPointerDownDetect);
-    canvas.removeEventListener('pointermove',onPointerMove);
-    canvas.removeEventListener('pointerup',onPointerUp);
-    canvas.removeEventListener('pointercancel',onPointerUp);
-    canvas.removeEventListener('pointerleave',onPointerUp);
-    canvas.removeEventListener('mousedown',onMouseDown);
-    canvas.removeEventListener('mousemove',onMouseMove);
-    canvas.removeEventListener('mouseup',onMouseUp);
-    canvas.removeEventListener('mouseleave',onMouseUp);
-    canvas.removeEventListener('touchstart',onTouchStart);
-    canvas.removeEventListener('touchmove',onTouchMove);
-    canvas.removeEventListener('touchend',onTouchEnd);
-  };
-
-  return ctx;
-}
-
-function initSig(canvasId){
-  const canvas=document.getElementById(canvasId);
-  if(!canvas)return;
-  const ctx=_setupSigCanvas(canvas,canvasId,110);
-  sigPads[canvasId]={canvas,ctx,isEmpty:true};
-}
-function updateSigState(canvasId){
-  const pad=sigPads[canvasId];if(!pad)return;
-  const data=pad.ctx.getImageData(0,0,pad.canvas.width,pad.canvas.height).data;
-  const hasInk=Array.from(data).some((v,i)=>i%4===3&&v>10);
-  pad.isEmpty=!hasInk;
-  const wrap=document.getElementById('sig-wrap-'+canvasId.replace('sig-',''));
-  const ph=document.getElementById('sig-ph-'+canvasId.replace('sig-',''));
-  const lbl=document.getElementById('sig-lbl-'+canvasId.replace('sig-',''));
-  if(wrap)wrap.classList.toggle('signed',hasInk);
-  if(ph)ph.style.display=hasInk?'none':'flex';
-  if(lbl){lbl.textContent=hasInk?'✓ Signature captured':'Draw signature above';lbl.className='sig-label'+(hasInk?' signed-lbl':'');}
-}
-function clearSig(canvasId){
-  const pad=sigPads[canvasId];if(!pad)return;
-  pad.ctx.clearRect(0,0,pad.canvas.width,pad.canvas.height);
-  pad.isEmpty=true;
-  updateSigState(canvasId);
-  // Sync modal canvas if open for this pad — but DON'T call clearSigModal()
-  // to avoid a mutual recursion loop (clearSigModal also calls clearSig)
-  if(window._sigModalSource===canvasId&&_sigModalCtx){
-    const c=document.getElementById('sig-modal-canvas');
-    if(c)_sigModalCtx.clearRect(0,0,c.width,c.height);
-    const ph=document.getElementById('sig-modal-ph');
-    if(ph)ph.style.display='flex';
-  }
-}
-
-// ── SIG EXPAND MODAL ──
-let _sigModalCtx=null;
-window._sigModalSource=null;
-
-function openSigModal(canvasId){
-  window._sigModalSource=canvasId;
-  const ov=document.getElementById('sig-modal-ov');
-  const modalCanvas=document.getElementById('sig-modal-canvas');
-  const ph=document.getElementById('sig-modal-ph');
-
-  // Label
-  const labels={'sig-borrow':'Borrower Signature','sig-ops-issue':'OPS Issuing Signature',
-    'sig-ret-person':'Returning Person Signature','sig-ret-ops':'OPS Personnel Signature',
-    'sig-kp-close':'Driver Signature (Close)','sig-kp-open':'Driver Signature (Open)'};
-  document.getElementById('sig-modal-title').textContent='✍ '+(labels[canvasId]||'Signature');
-
-  // Init/resize the modal canvas
-  ov.classList.add('open');
-  requestAnimationFrame(()=>{
-    if(modalCanvas._sigCleanup)modalCanvas._sigCleanup();
-    _sigModalCtx=_setupSigCanvas(modalCanvas,'_modal_',220);
-
-    // Copy existing strokes from small pad into the expanded canvas
-    const src=sigPads[canvasId];
-    if(src&&!src.isEmpty){
-      const dpr=window.devicePixelRatio||1;
-      _sigModalCtx.save();
-      _sigModalCtx.scale(1/dpr,1/dpr);
-      _sigModalCtx.drawImage(src.canvas,0,0,modalCanvas.width,modalCanvas.height);
-      _sigModalCtx.restore();
-      ph.style.display='none';
-    } else {
-      ph.style.display='flex';
-    }
-
-    // Update placeholder on draw
-    modalCanvas.addEventListener('pointermove',()=>{ph.style.display='none';},{once:true});
-  });
-}
-
-function clearSigModal(){
-  if(!_sigModalCtx)return;
-  const c=document.getElementById('sig-modal-canvas');
-  _sigModalCtx.clearRect(0,0,c.width,c.height);
-  document.getElementById('sig-modal-ph').style.display='flex';
-  // Clear the source pad directly — do NOT call clearSig() to avoid mutual recursion
-  if(window._sigModalSource){
-    const pad=sigPads[window._sigModalSource];
-    if(pad){
-      pad.ctx.clearRect(0,0,pad.canvas.width,pad.canvas.height);
-      pad.isEmpty=true;
-      updateSigState(window._sigModalSource);
-    }
-  }
-}
-
-function closeSigModal(commit){
-  const ov=document.getElementById('sig-modal-ov');
-  ov.classList.remove('open');
-  if(commit&&window._sigModalSource&&_sigModalCtx){
-    // Copy modal strokes back to the original small pad
-    const target=sigPads[window._sigModalSource];
-    if(target){
-      const src=document.getElementById('sig-modal-canvas');
-      target.ctx.clearRect(0,0,target.canvas.width,target.canvas.height);
-      const dpr=window.devicePixelRatio||1;
-      target.ctx.save();
-      target.ctx.scale(1/dpr,1/dpr);
-      target.ctx.drawImage(src,0,0,target.canvas.width,target.canvas.height);
-      target.ctx.restore();
-      updateSigState(window._sigModalSource);
-    }
-  }
-  window._sigModalSource=null;
-  _sigModalCtx=null;
-}
-function getSigDataURL(canvasId){
-  const pad=sigPads[canvasId];
-  if(!pad||pad.isEmpty)return null;
-  // Copy strokes onto a transparent canvas, then remap inked pixels to dark navy.
-  // Do NOT pre-fill white — that kills alpha, making every pixel look like ink.
-  const src=pad.canvas;
-  const off=document.createElement('canvas');
-  off.width=src.width;off.height=src.height;
-  const ctx=off.getContext('2d');
-  ctx.drawImage(src,0,0);
-  const img=ctx.getImageData(0,0,off.width,off.height);
-  const d=img.data;
-  for(let i=0;i<d.length;i+=4){
-    if(d[i+3]>10){
-      d[i]=30;d[i+1]=41;d[i+2]=59;d[i+3]=255; // dark navy #1e293b
-    } else {
-      d[i]=0;d[i+1]=0;d[i+2]=0;d[i+3]=0; // fully transparent
-    }
-  }
-  ctx.putImageData(img,0,0);
-  return off.toDataURL('image/png');
-}
-function openSigZoom(src){
-  document.getElementById('sig-zoom-img').src=src;
-  document.getElementById('sig-zoom-ov').classList.add('open');
-}
-
-// ─── HDR OVERFLOW MENU ──────────────────────────────────
-function toggleHdrMenu(){
-  const m=document.getElementById('hdr-menu');
-  const open=m.style.display==='block';
-  m.style.display=open?'none':'block';
-  if(!open){
-    const close=e=>{if(!e.target.closest('#hdr-menu')&&!e.target.closest('#hdr-menu-btn')){m.style.display='none';document.removeEventListener('click',close);}};
-    setTimeout(()=>document.addEventListener('click',close),10);
-  }
-}
-function initAllSigs(){
-  // rAF + delay ensures DOM is fully laid out before reading offsetWidth.
-  // Corporate PCs can be slow to paint; 150ms gives them a safe margin.
-  requestAnimationFrame(()=>{
-    setTimeout(()=>{
-      ['sig-borrow','sig-ops-issue','sig-ret-person','sig-ret-ops'].forEach(id=>initSig(id));
-    },150);
-  });
-}
-// re-init sigs when modal opens
-function reinitSig(id){setTimeout(()=>{
-  const canvas=document.getElementById(id);
-  if(!canvas)return;
-  // Clean up old listeners before reinitialising
-  if(canvas._sigCleanup)canvas._sigCleanup();
-  const ctx=_setupSigCanvas(canvas,id,110);
-  sigPads[id]={canvas,ctx,isEmpty:true};
-  updateSigState(id);
-},60);}
-
-// ─── STATUS CHANGE ────────────────────────────────────────
-function _baseSetStatusDirect(id,newStatus){
-  const st=state[id];
-  if(newStatus==='in'){delete records[id];st.offrunReason='';st.offrunFrom='';st.offrunUntil='';}
-  st.status=newStatus;st.since=Date.now();
-  addLog(id,newStatus,statusLabel(st));
-  renderAll();persist();
-}
-
-// ─── FILTER / SORT ────────────────────────────────────────
-function setFilter(v){filterMode=(filterMode===v)?'all':v;document.getElementById('filter-sel').value=filterMode;['all','in','out','offrun'].forEach(x=>{const el=document.getElementById('fil-'+x);if(el)el.classList.remove('fil-in','fil-out','fil-offrun','fil-all');});const ae=document.getElementById('fil-'+filterMode);if(ae)ae.classList.add('fil-'+filterMode);renderAll();persist();}
-function setFilterDropdown(v){filterMode=v;renderAll();persist();}
-function setSortMode(v){
-  if(v!=='default'&&v===sortMode){sortDir=sortDir==='asc'?'desc':'asc';}
-  else{sortMode=v;sortDir='asc';}
-  renderAll();persist();
-}
-function sortedVehs(list){
-  const a=[...list];
-  const flip=sortDir==='desc'?-1:1;
-  const ord={in:0,out:1,offrun:2};
-  if(sortMode==='status')a.sort((x,y)=>flip*((ord[state[x.id]?.status]??3)-(ord[state[y.id]?.status]??3)));
-  else if(sortMode==='reg')a.sort((x,y)=>flip*x.reg.localeCompare(y.reg));
-  else if(sortMode==='keyno')a.sort((x,y)=>flip*((parseInt(x.bunchNo)||9999)-(parseInt(y.bunchNo)||9999)));
-  else if(sortMode==='az')a.sort((x,y)=>flip*x.vehicle.localeCompare(y.vehicle));
-  return a;
-}
-function locEmoji(loc){
-  const u=(loc||'').toUpperCase();
-  if(u.includes('YARD'))return'🏗️';
-  if(u.includes('BASEMENT'))return'🏢';
-  if(u.includes('STN')||u.includes('STATION'))return'🚉';
-  if(u.includes('LOADING'))return'📦';
-  if(u.includes('SERVIC'))return'🔧';
-  if(u.includes('OPS'))return'🎯';
-  if(u.includes('CDA'))return'🏛️';
-  if(u.includes('WORKSHOP'))return'⚙️';
-  if(u.includes('POOL'))return'🅿️';
-  return'📍';
-}
-
-// ─── MIDNIGHT HELPER ─────────────────────────────────────
-function issuedPrevDay(ts){
-  const now=new Date();const issued=new Date(ts);
-  return issued.toDateString()!==now.toDateString();
-}
-function checkMidnightFlags(){
-  const banner=document.getElementById('midnight-banner');
-  if(kpStatus==='closed'){banner.style.display='none';return;}
-  const flagged=vehicles.filter(v=>!v.nil&&state[v.id].status==='out'&&records[v.id]&&issuedPrevDay(records[v.id].issuedAt));
-  if(flagged.length){
-    banner.style.display='flex';
-    const names=flagged.map(v=>`${v.vehicle} (Key #${v.bunchNo})`).join(', ');
-    document.getElementById('midnight-title').textContent=`⚠ ${flagged.length} Key${flagged.length>1?'s':''} Not Returned Past Midnight`;
-    document.getElementById('midnight-sub').textContent=`${names} — issued on a previous day.`;
-  } else {banner.style.display='none';}
-}
-
-// ─── RENDER ──────────────────────────────────────────────
-function renderAll(){
-  renderGrid();renderStats();checkMidnightFlags();
-  ['in','out','offrun'].forEach(s=>{
-    const el=document.getElementById('fil-'+s);
-    if(el)el.className='stat'+(filterMode===s?' fil-'+s:'');
-  });
-  document.getElementById('fil-all').className='stat'+(filterMode==='all'?' fil-all':'');
-  // sync sort pills
-  document.querySelectorAll('.sort-pill').forEach(b=>{
-    const isActive=b.dataset.sort===sortMode;
-    b.classList.toggle('active',isActive);
-    const lbl=b.dataset.label||b.dataset.sort;
-    if(isActive&&sortMode!=='default')b.textContent=lbl+' '+(sortDir==='asc'?'↑':'↓');
-    else b.textContent=lbl;
-  });
-  document.getElementById('filter-sel').value=filterMode;
-  document.getElementById('filter-sel').classList.toggle('on',filterMode!=='all');
-  const allIn=vehicles.filter(v=>!v.nil).every(v=>state[v.id].status==='in'||state[v.id].status==='offrun');
-  const hasAnyIn=vehicles.filter(v=>!v.nil).some(v=>state[v.id].status==='in');
-  document.getElementById('bulk-banner').style.display=(allIn&&hasAnyIn)?'flex':'none';
-}
-function renderStats(){
-  let i=0,o=0,or=0;
-  vehicles.filter(v=>!v.nil).forEach(v=>{
-    const s=state[v.id].status;
-    if(s==='in')i++;else if(s==='out')o++;else if(s==='offrun')or++;
-  });
-  document.getElementById('cnt-in').textContent=i;
-  document.getElementById('cnt-out').textContent=o;
-  document.getElementById('cnt-offrun').textContent=or;
-  document.getElementById('cnt-total').textContent=i+o+or;
-}
-function renderGrid(){
-  const ga=document.getElementById('grid-active');
-  const gn=document.getElementById('grid-nil');
-  ga.innerHTML='';gn.innerHTML='';
-  const isRow=viewMode==='row';
-  ga.className='fleet-grid'+(isRow?' row-view':'');
-  gn.className='fleet-grid'+(isRow?' row-view':'');
-  sortedVehs(vehicles.filter(v=>!v.nil)).forEach(v=>{
-    const c=buildCard(v);
-    if(filterMode!=='all'&&state[v.id].status!==filterMode)c.classList.add('card-hidden');
-    ga.appendChild(c);
-  });
-  vehicles.filter(v=>v.nil).forEach(v=>gn.appendChild(buildCard(v)));
-}
-function buildCard(v){
-  const st=state[v.id];
-  const isNil=!!v.nil;
-  const card=document.createElement('div');
-  card.className=`card k-${isNil?'nil':st.status}`;
-  card.id='card-'+v.id;
-  const isMidnightFlag=!isNil&&st.status==='out'&&records[v.id]&&issuedPrevDay(records[v.id].issuedAt);
-
-  // Status display
-  let statusHtml='';
-  if(isNil){
-    statusHtml='<div class="status-badge">N/A</div>';
-  } else if(st.status==='out'){
-    const r=records[v.id];
-    const quickFlag=r&&r.type==='quick'?'<span class="quick-tag" title="Issued via Quick Issue">\u26a1 QUICK</span>':'';
-    statusHtml=`<div class="sw-wrap"><div class="sw-time" id="sw-${v.id}">${sw(st.since)}</div><div class="sw-lbl">Loaned Out${quickFlag}</div></div>${isMidnightFlag?'<div class="midnight-flag">\u26a0 PAST MIDNIGHT</div>':''}`;
-  } else if(st.status==='in'){
-    statusHtml=`<div class="since-txt" id="sw-${v.id}">${elapsed(st.since)} ago</div>`;
-  } else {
-    statusHtml=`<div class="status-badge">${statusLabel(st)}</div><div class="since-txt" id="sw-${v.id}">${elapsed(st.since)} ago</div>`;
-  }
-
-  // Sub info
-  let subHtml='';
-  if(!isNil){
-    if(st.status==='out'&&records[v.id]){
-      const r=records[v.id];
-      subHtml=`<div class="card-sub out-sub">\ud83d\udc64 ${r.borrowerName||r.takenBy||'\u2014'}${r.purpose?' \u00b7 '+r.purpose:''}</div>`;
-    } else if(st.status==='offrun'&&st.offrunReason){
-      subHtml=`<div class="card-sub or-sub">${st.offrunReason} \u00b7 Until ${st.offrunUntil?fmtD(st.offrunUntil):'TBD'}</div>`;
-    }
-  }
-
-  // Footer
-  let footHtml='';
-  if(!isNil){
-    if(st.status==='out'){
-      footHtml=`<div class="card-foot"><button class="fbtn in-btn" onclick="openReturn(${v.id})">\u21a9 Return to Keypress</button><button class="fbtn" onclick="openRecordView(${v.id})">\ud83d\udccb Record</button><button class="fbtn log-btn" onclick="openLog(${v.id})">\ud83d\udcdc Log</button></div>`;
-    } else if(st.status==='in'){
-      footHtml=`<div class="card-foot"><button class="fbtn out-btn" onclick="openIssue(${v.id})">Loan Out \u2192</button><button class="fbtn" onclick="openQuickIssue(${v.id})" title="Quick issue">\u26a1 Quick</button><button class="fbtn or-btn" onclick="openOffrun(${v.id})">\u23f8 Off-Run</button><button class="fbtn log-btn" onclick="openLog(${v.id})">\ud83d\udcdc Log</button></div>`;
-    } else {
-      footHtml=`<div class="card-foot"><button class="fbtn in-btn" onclick="setStatusDirect(${v.id},'in')">\u21a9 Back to Keypress</button><button class="fbtn log-btn" onclick="openLog(${v.id})">\ud83d\udcdc Log</button></div>`;
-    }
-  }
-
-  // Remarks bar
-  const rmkVal=(st.remarks||'').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
-  const rmkBarHtml=!isNil?`<div class="card-remarks-bar" id="rmkbar-${v.id}">
-    <span class="rmk-text ${st.remarks?'has-rmk':''}" id="rmktxt-${v.id}">${st.remarks||'<span style="opacity:.45;font-size:10px;">No remarks</span>'}</span>
-    <input class="rmk-edit-inline" id="rmkby-${v.id}" placeholder="Your name" style="max-width:120px;display:none;" autocapitalize="characters">
-    <input class="rmk-edit-inline" id="rmki-${v.id}" value="${rmkVal}" placeholder="Remarks\u2026" onkeydown="if(event.key==='Enter')saveRemarksInline(${v.id});if(event.key==='Escape')cancelRemarksInline(${v.id});">
-    <button class="rmk-bar-btn" id="rmkbtn-${v.id}" onclick="toggleRemarksInline(${v.id})">\u270e Edit</button>
-    <button class="rmk-bar-btn save-rmk" id="rmksave-${v.id}" style="display:none;" onclick="saveRemarksInline(${v.id})">Save</button>
-    <button class="rmk-bar-btn clr-rmk" id="rmkclr-${v.id}" style="display:none;" onclick="clearRemarksInline(${v.id})">Clear</button>
-  </div>`:'';
-
-  // Key sidebar
-  const keyNum=isNil?'\u2014':(v.bunchNo||v.id);
-  const sidebarHtml=`<div class="card-key-sidebar"><div class="card-key-lbl">KEY #</div><div class="card-key-num">${keyNum}</div></div>`;
-
-  // Main
-  const mainHtml=`<div class="card-main"><div class="card-top-row"><div class="card-ico">${isNil?'\u2298':ico(v.vehicle)}</div><div class="card-info"><div class="card-name">${v.vehicle}</div><div class="card-reg">${v.reg}</div><div class="card-loc-row"><span class="card-loc-pin">\ud83d\udccd</span><span class="loc-chip" id="loc-t-${v.id}" onclick="editLoc(${v.id})">${st.location}</span><span class="card-loc-edit" onclick="editLoc(${v.id})">\u270e</span><input class="loc-inp" id="loc-i-${v.id}" value="${st.location}" onblur="saveLoc(${v.id})" onkeydown="locKey(event,${v.id})"></div>${subHtml}</div><div class="card-status-col">${statusHtml}</div></div><div class="card-spacer"></div></div>`;
-
-  card.innerHTML=`<div class="card-bar"></div><div class="card-body">${sidebarHtml}${mainHtml}</div>${rmkBarHtml}${footHtml}`;
-  return card;
-}
-// ─── TOGGLES ──────────────────────────────────────────────
-function handleInToggle(id){if(state[id].status==='out')openReturn(id);else if(state[id].status==='offrun')setStatusDirect(id,'in');}
-function handleOutToggle(id){if(state[id].status==='in')openIssue(id);}
-
-// ─── REMARKS INLINE ───────────────────────────────────────
-function toggleRemarks(id){toggleRemarksInline(id);}// compat
-function toggleRemarksInline(id){
-  const inp=document.getElementById('rmki-'+id);
-  const byInp=document.getElementById('rmkby-'+id);
-  const txt=document.getElementById('rmktxt-'+id);
-  const editBtn=document.getElementById('rmkbtn-'+id);
-  const saveBtn=document.getElementById('rmksave-'+id);
-  const clrBtn=document.getElementById('rmkclr-'+id);
-  if(!inp)return;
-  const editing=inp.classList.contains('visible');
-  if(editing){cancelRemarksInline(id);}
-  else{
-    if(byInp)byInp.style.display='block';
-    inp.classList.add('visible');txt.style.display='none';
-    editBtn.style.display='none';saveBtn.style.display='';clrBtn.style.display='';
-    if(byInp){byInp.value='';byInp.focus();}else{inp.focus();inp.select();}
-  }
-}
-function cancelRemarksInline(id){
-  const inp=document.getElementById('rmki-'+id);
-  const byInp=document.getElementById('rmkby-'+id);
-  const txt=document.getElementById('rmktxt-'+id);
-  const editBtn=document.getElementById('rmkbtn-'+id);
-  const saveBtn=document.getElementById('rmksave-'+id);
-  const clrBtn=document.getElementById('rmkclr-'+id);
-  if(!inp)return;
-  if(byInp)byInp.style.display='none';
-  inp.classList.remove('visible');txt.style.display='';
-  editBtn.style.display='';saveBtn.style.display='none';clrBtn.style.display='none';
-  inp.value=(state[id].remarks||'');
-}
-function _baseSaveRemarksInline(id){
-  const inp=document.getElementById('rmki-'+id);if(!inp)return;
-  state[id].remarks=inp.value.trim();
-  cancelRemarksInline(id);renderAll();persist();
-}
-function _baseClearRemarksInline(id){
-  state[id].remarks='';
-  const inp=document.getElementById('rmki-'+id);if(inp)inp.value='';
-  cancelRemarksInline(id);renderAll();persist();
-}
-function saveRemarks(id){saveRemarksInline(id);}
-function clearRemarks(id){clearRemarksInline(id);}
-
-// ─── CLEAR ALL ────────────────────────────────────────────
-function confirmClearAll(){
-  if(!confirm('⚠ CLEAR ALL DATA?\n\nThis will reset all vehicles to "In Keypress" and delete the entire audit log.\n\nThis cannot be undone. Continue?'))return;
-  clearAll();
-}
-function clearAll(){
-  vehicles.forEach(v=>{
-    state[v.id]={status:'in',since:Date.now(),location:v.location||state[v.id]?.location||'',remarks:'',offrunReason:'',offrunFrom:'',offrunUntil:''};
-    delete records[v.id];
-  });
-  auditLog.length=0;
-  renderAll();persist();
-  alert('All records cleared.');
-}
-function confirmClearAllLogs(){
-  if(!confirm('⚠ CLEAR ENTIRE AUDIT LOG?\n\nThis removes all log history but keeps current key states.\n\nContinue?'))return;
-  auditLog.length=0;
-  renderAllFilters();renderLogEntries([],'alllog-b',true);
-  document.getElementById('alllog-count').textContent='';
-  persist();
-}
-let logPendingVehicleId=null;
-function confirmClearVehicleLog(){
-  const id=logPendingVehicleId;if(!id)return;
-  const v=vehicles.find(x=>x.id===id);
-  if(!confirm(`Clear all log entries for ${v.vehicle} (${v.reg})?\n\nCannot be undone.`))return;
-  const toRemove=auditLog.filter(e=>e.id===id);
-  toRemove.forEach(e=>{const i=auditLog.indexOf(e);if(i>-1)auditLog.splice(i,1);});
-  renderLogEntries([],'log-b');
-  document.getElementById('log-s').textContent='Log cleared.';
-  persist();
-}
-
-// ─── DUMMY DATA ───────────────────────────────────────────
-function addDummyRecords(){
-  if(!confirm('Add dummy records for 5 Jun – 10 Jun 2026 for testing?\n\nThis will add historical log entries without changing current vehicle states.'))return;
-  const dummy=[
-    {id:1,day:5,h:8,m:10,action:'out',borrower:'SGT TAN WEI LIANG',unit:'OPS',purpose:'1st Parade',keys:2,opsName:'CPL AHMAD FIRDAUS'},
-    {id:1,day:5,h:17,m:30,action:'in',returner:'SGT TAN WEI LIANG',opsName:'CPL AHMAD FIRDAUS',condition:'Good',keys:2},
-    {id:2,day:5,h:8,m:15,action:'out',borrower:'CPL LIAO JUN HAO',unit:'MT SECTION',purpose:'Servicing run',keys:1,opsName:'CPL AHMAD FIRDAUS'},
-    {id:2,day:5,h:13,m:0,action:'in',returner:'CPL LIAO JUN HAO',opsName:'CPL AHMAD FIRDAUS',condition:'Good',keys:1},
-    {id:4,day:6,h:7,m:45,action:'out',borrower:'LTA CHEN MING',unit:'OPS',purpose:'Exercise SWIFT',keys:3,opsName:'SGT RAHMAN'},
-    {id:4,day:6,h:23,m:55,action:'in',returner:'LTA CHEN MING',opsName:'SGT RAHMAN',condition:'Good',keys:3},
-    {id:5,day:7,h:6,m:0,action:'out',borrower:'2LT YUSOF BIN ALI',unit:'3 SIR',purpose:'Night exercise',keys:2,opsName:'CPL AHMAD FIRDAUS'},
-    {id:5,day:8,h:3,m:20,action:'in',returner:'2LT YUSOF BIN ALI',opsName:'CPL AHMAD FIRDAUS',condition:'Good',keys:2},
-    {id:7,day:7,h:8,m:0,action:'out',borrower:'SGT PETER LOW',unit:'LOG',purpose:'Supply run',keys:1,opsName:'CPL GOMEZ'},
-    {id:7,day:7,h:16,m:45,action:'in',returner:'SGT PETER LOW',opsName:'CPL GOMEZ',condition:'Good',keys:1},
-    {id:9,day:8,h:7,m:30,action:'out',borrower:'CPL HASSAN',unit:'OPS',purpose:'Morning parade run',keys:2,opsName:'SGT RAHMAN'},
-    {id:9,day:8,h:12,m:0,action:'in',returner:'CPL HASSAN',opsName:'SGT RAHMAN',condition:'Good',keys:2},
-    {id:3,day:9,h:8,m:0,action:'out',borrower:'ME2 TAN BOON HENG',unit:'OPS',purpose:'1st Parade',keys:1,opsName:'CPL AHMAD FIRDAUS'},
-    {id:3,day:9,h:18,m:10,action:'in',returner:'ME2 TAN BOON HENG',opsName:'CPL AHMAD FIRDAUS',condition:'Good',keys:1},
-    {id:10,day:9,h:9,m:15,action:'out',borrower:'CPL LIANG JIN',unit:'QM',purpose:'Resupply task',keys:2,opsName:'CPL AHMAD FIRDAUS'},
-    {id:10,day:9,h:14,m:30,action:'in',returner:'CPL LIANG JIN',opsName:'CPL AHMAD FIRDAUS',condition:'Good',keys:2},
-    {id:13,day:10,h:7,m:55,action:'out',borrower:'SGT FARHAN',unit:'OPS',purpose:'1st Parade',keys:2,opsName:'SGT RAHMAN'},
-    {id:13,day:10,h:17,m:0,action:'in',returner:'SGT FARHAN',opsName:'SGT RAHMAN',condition:'Good',keys:2},
-    {id:6,day:10,h:8,m:20,action:'out',borrower:'CPL WONG YEW KHENG',unit:'MT',purpose:'Vehicle wash bay',keys:1,opsName:'CPL GOMEZ'},
-    {id:6,day:10,h:11,m:30,action:'in',returner:'CPL WONG YEW KHENG',opsName:'CPL GOMEZ',condition:'Good',keys:1},
-  ];
-  dummy.forEach(d=>{
-    const v=vehicles.find(x=>x.id===d.id);if(!v)return;
-    const ts=new Date(2026,5,d.day,d.h,d.m,0).getTime(); // June=month 5
-    if(d.action==='out'){
-      const rec={type:'full',issuedAt:ts,bunchNo:v.bunchNo,keyCount:String(d.keys),purpose:d.purpose,borrowerName:d.borrower,borrowerUnit:d.unit,opsName:d.opsName,borrowerSig:null,opsSig:null,expectedReturn:''};
-      auditLog.push({ts,id:v.id,toStatus:'out',toLabel:`LOANED OUT → ${d.borrower}`,vehicle:v.vehicle,reg:v.reg,detail:`Keys: ${d.keys} · ${d.purpose}`,rec:JSON.parse(JSON.stringify(rec))});
-    } else {
-      const fullSnap={type:'return',issuedAt:ts-3600000,borrowerName:d.returner,returnedAt:ts,returnPersonName:d.returner,returnOpsName:d.opsName,returnKeyCount:String(d.keys),condition:d.condition||'Good',isReturn:true};
-      auditLog.push({ts,id:v.id,toStatus:'in',toLabel:`RETURNED TO KEYPRESS by ${d.returner}`,vehicle:v.vehicle,reg:v.reg,detail:`Keys: ${d.keys} · Condition: ${d.condition} · OPS: ${d.opsName}`,rec:fullSnap});
-    }
-  });
-  auditLog.sort((a,b)=>b.ts-a.ts);
-  persist();
-  alert(`Added ${dummy.length} dummy log entries for 5–10 Jun 2026.`);
-}
-
-// ─── LOG DATE FILTER ──────────────────────────────────────
-let allLogDateFilter='';
-function applyLogDateFilter(){
-  allLogDateFilter=document.getElementById('alllog-date-filter')?.value||'';
-  refreshAllLog();
-}
-function clearLogDateFilter(){
-  allLogDateFilter='';
-  // clear the cdp-log picker state
-  if(cdpState['cdp-log']){cdpState['cdp-log'].sel1=null;cdpState['cdp-log'].sel2=null;cdpRender('cdp-log');}
-  const btn=document.getElementById('cdp-log-display');
-  if(btn){btn.textContent='All dates…';btn.classList.remove('has-value');}
-  refreshAllLog();
-}
-function clearLogDatePicker(){clearLogDateFilter();}
-function refreshAllLog(){
-  let entries=allFilter==='all'?[...auditLog]:auditLog.filter(e=>String(e.id)===allFilter);
-  if(allLogDateFilter){
-    const sel=new Date(allLogDateFilter+'T00:00:00');
-    entries=entries.filter(e=>{const d=new Date(e.ts);return d.getFullYear()===sel.getFullYear()&&d.getMonth()===sel.getMonth()&&d.getDate()===sel.getDate();});
-  }
-  const cnt=document.getElementById('alllog-count');
-  if(cnt)cnt.textContent=entries.length?`${entries.length} entr${entries.length===1?'y':'ies'}`:'';
-  renderLogEntries(entries,'alllog-b',true);
-}
-function exportLogPDF(){
-  let entries=allFilter==='all'?[...auditLog]:auditLog.filter(e=>String(e.id)===allFilter);
-  if(allLogDateFilter){
-    const sel=new Date(allLogDateFilter+'T00:00:00');
-    entries=entries.filter(e=>{const d=new Date(e.ts);return d.getFullYear()===sel.getFullYear()&&d.getMonth()===sel.getMonth()&&d.getDate()===sel.getDate();});
-  }
-  const dateLbl=allLogDateFilter?new Date(allLogDateFilter+'T00:00:00').toLocaleDateString('en-GB',{weekday:'long',day:'2-digit',month:'long',year:'numeric'}):'All Dates';
-  const vehLbl=allFilter==='all'?'All Vehicles':(()=>{const v=vehicles.find(x=>String(x.id)===allFilter);return v?v.vehicle+' · '+v.reg:'';})();
-  const col={in:'#22c55e',out:'#f97316',offrun:'#a78bfa'};
-  const rows=entries.map(e=>`<tr><td style="white-space:nowrap;font-family:monospace;font-size:11px;padding:5px 8px;border-bottom:1px solid #e5e7eb;">${fmtDT(e.ts)}</td><td style="padding:5px 8px;border-bottom:1px solid #e5e7eb;font-weight:700;color:${col[e.toStatus]||'#374151'};font-size:11px;">${e.vehicle}</td><td style="font-family:monospace;font-size:10px;padding:5px 8px;border-bottom:1px solid #e5e7eb;">${e.reg}</td><td style="padding:5px 8px;border-bottom:1px solid #e5e7eb;font-size:11px;">${e.toLabel}</td><td style="padding:5px 8px;border-bottom:1px solid #e5e7eb;font-size:10px;color:#6b7280;">${e.detail||''}</td></tr>`).join('');
-  const pa=document.getElementById('print-area');
-  pa.innerHTML=`<div style="font-family:Inter,Arial,sans-serif;padding:24px;color:#111;">
-    <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px;border-bottom:2px solid #111;padding-bottom:12px;">
-      <div><div style="font-size:20px;font-weight:800;letter-spacing:.04em;">OPS KEYPRESS RECORD</div><div style="font-size:12px;color:#555;margin-top:4px;">Vehicle Key Custody Log</div></div>
-      <div style="text-align:right;"><div style="font-size:12px;font-weight:700;">${dateLbl}</div><div style="font-size:11px;color:#555;margin-top:2px;">${vehLbl}</div><div style="font-size:10px;color:#999;margin-top:4px;">Printed: ${fmtDT(Date.now())}</div></div>
-    </div>
-    ${entries.length?`<table style="width:100%;border-collapse:collapse;"><thead><tr style="background:#f3f4f6;">${['Date/Time','Vehicle','Reg','Action','Details'].map(h=>`<th style="padding:6px 8px;font-size:10px;text-transform:uppercase;letter-spacing:.06em;text-align:left;border-bottom:2px solid #d1d5db;">${h}</th>`).join('')}</tr></thead><tbody>${rows}</tbody></table>`:'<div style="padding:20px;text-align:center;color:#9ca3af;">No records for this selection.</div>'}
-    <div style="margin-top:24px;border-top:1px solid #e5e7eb;padding-top:12px;font-size:10px;color:#9ca3af;">Total entries: ${entries.length} · Generated by OPS Keypress Record System</div>
-  </div>`;
-  pa.style.display='block';
-  setTimeout(()=>{window.print();pa.style.display='none';pa.innerHTML='';},100);
-  // Record this export so the backup reminder banner knows everything's covered
-  markExported();
-}
-
-// ─── EXPORT REMINDER BANNER ────────────────────────────────
-const EXPORT_REMINDER_KEY='opsKeypress_lastExport';
-const EXPORT_REMIND_AFTER_MS=4*60*60*1000;     // nag again after 4h of no export
-const EXPORT_REMIND_AFTER_COUNT=15;            // or after 15 new unexported entries
-const EXPORT_SNOOZE_MS=30*60*1000;             // dismiss button snoozes for 30 min
-
-function markExported(){
-  try{
-    localStorage.setItem(EXPORT_REMINDER_KEY, JSON.stringify({
-      lastExportAt: Date.now(),
-      lastExportCount: auditLog.length
-    }));
-  }catch(e){}
-  updateExportBanner();
-}
-function dismissExportBanner(){
-  try{
-    const raw=JSON.parse(localStorage.getItem(EXPORT_REMINDER_KEY)||'{}');
-    raw.snoozeUntil=Date.now()+EXPORT_SNOOZE_MS;
-    localStorage.setItem(EXPORT_REMINDER_KEY, JSON.stringify(raw));
-  }catch(e){}
-  const b=document.getElementById('export-banner');
-  if(b)b.style.display='none';
-}
-function updateExportBanner(){
-  const b=document.getElementById('export-banner');
-  if(!b)return;
-  let info={};
-  try{info=JSON.parse(localStorage.getItem(EXPORT_REMINDER_KEY)||'{}');}catch(e){}
-  const now=Date.now();
-  if(info.snoozeUntil&&now<info.snoozeUntil){b.style.display='none';return;}
-
-  const lastExportAt=info.lastExportAt||0;
-  const lastExportCount=info.lastExportCount||0;
-  const newEntries=auditLog.length-lastExportCount;
-  const msSinceExport=now-lastExportAt;
-
-  // Nothing to export yet, or never needed a reminder
-  if(auditLog.length===0){b.style.display='none';return;}
-  // First-ever use: only nag once enough activity has accumulated
-  if(!lastExportAt&&auditLog.length<EXPORT_REMIND_AFTER_COUNT){b.style.display='none';return;}
-
-  const dueByTime=lastExportAt>0&&msSinceExport>=EXPORT_REMIND_AFTER_MS;
-  const dueByCount=newEntries>=EXPORT_REMIND_AFTER_COUNT;
-  const neverExported=!lastExportAt&&auditLog.length>=EXPORT_REMIND_AFTER_COUNT;
-
-  if(!dueByTime&&!dueByCount&&!neverExported){b.style.display='none';return;}
-
-  // Build message
-  const urgent=dueByCount&&newEntries>=EXPORT_REMIND_AFTER_COUNT*2;
-  b.classList.toggle('urgent',urgent);
-  const sub=document.getElementById('export-banner-sub');
-  const title=document.getElementById('export-banner-title');
-  if(neverExported){
-    title.textContent='No Backup Taken Yet';
-    sub.textContent=`${auditLog.length} record${auditLog.length===1?'':'s'} logged with no PDF export so far.`;
-  } else if(dueByCount){
-    title.textContent='Backup Reminder';
-    sub.textContent=`${newEntries} new record${newEntries===1?'':'s'} since your last export.`;
-  } else {
-    const hrs=Math.floor(msSinceExport/3600000);
-    title.textContent='Backup Reminder';
-    sub.textContent=`It's been ${hrs}+ hour${hrs===1?'':'s'} since your last export.`;
-  }
-  b.style.display='flex';
-}
-
-// ─── ISSUE KEYS ───────────────────────────────────────────
-function openIssue(id){
-  pendingId=id;
-  const v=vehicles.find(x=>x.id===id);
-  document.getElementById('issue-title').textContent='Loan Out — '+v.vehicle;
-  document.getElementById('issue-sub').textContent=v.reg;
-  ['i-keycount','i-purpose','i-bname','i-bunit','i-ops-name'].forEach(f=>{const e=document.getElementById(f);if(e)e.value='';});
-  document.getElementById('i-return-dt').value='';
-  resetKeycountBtns();{const inp=document.getElementById('i-keycount');if(inp){inp.value='';syncKcTrack();}}
-  resetDatePicker('cdp-issue');
-  ['sig-borrow','sig-ops-issue'].forEach(s=>reinitSig(s));
-  document.getElementById('ov-issue').classList.add('open');
-}
-function closeIssue(){document.getElementById('ov-issue').classList.remove('open');pendingId=null;}
-function applyIssue(){
-  if(!pendingId)return;
-  const id=pendingId;
-  const bname=document.getElementById('i-bname').value.trim();
-  if(!bname){alert('Borrower name is required.');return;}
-  const rec={
-    type:'full',issuedAt:Date.now(),
-    doName:'',
-    doRef:'',
-    bunchNo:vehicles.find(x=>x.id===id)?.bunchNo||'',
-    keyCount:document.getElementById('i-keycount').value.trim(),
-    purpose:document.getElementById('i-purpose').value.trim(),
-    borrowerName:bname,
-    borrowerUnit:document.getElementById('i-bunit').value.trim(),
-    borrowerSig:getSigDataURL('sig-borrow'),
-    opsName:document.getElementById('i-ops-name').value.trim(),
-    opsSig:getSigDataURL('sig-ops-issue'),
-    expectedReturn:(()=>{const r=document.getElementById('i-return-dt').value||'';const p=r.split('|');return p[p.length-1]||'';})(),
-    expectedReturnStart:(()=>{const r=document.getElementById('i-return-dt').value||'';return r.split('|')[0]||'';})(),
-  };
-  records[id]=rec;
-  state[id].status='out';state[id].since=Date.now();
-  actingAs(bname);
-  addLog(id,'out',`LOANED OUT → ${bname}`,`Keys: ${rec.keyCount||'?'}${rec.purpose?' · '+rec.purpose:''}`,JSON.parse(JSON.stringify(rec)));
-  closeIssue();renderAll();persist();
-}
-
-// ─── QUICK ISSUE ──────────────────────────────────────────
-function openQuickIssue(id){
-  pendingId=id;
-  const v=vehicles.find(x=>x.id===id);
-  document.getElementById('quick-title').textContent='Quick Issue — '+v.vehicle;
-  document.getElementById('quick-sub').textContent=v.reg+' · Informal / Internal';
-  ['q-name','q-purpose','q-remarks'].forEach(f=>{const e=document.getElementById(f);if(e)e.value='';});
-  document.getElementById('ov-quick').classList.add('open');
-}
-function closeQuick(){document.getElementById('ov-quick').classList.remove('open');pendingId=null;}
-function applyQuickIssue(){
-  if(!pendingId)return;const id=pendingId;
-  const name=document.getElementById('q-name').value.trim();
-  if(!name){alert('Name required.');return;}
-  const rec={type:'quick',issuedAt:Date.now(),takenBy:name,borrowerName:name,purpose:document.getElementById('q-purpose').value.trim(),remarks:document.getElementById('q-remarks').value.trim()};
-  records[id]=rec;state[id].status='out';state[id].since=Date.now();
-  actingAs(name);
-  addLog(id,'out',`LOANED OUT (QUICK) → ${name}`,rec.purpose||'Informal issue',JSON.parse(JSON.stringify(rec)));
-  closeQuick();renderAll();persist();
-}
-
-// ─── BULK ─────────────────────────────────────────────────
-function openBulkModal(){document.getElementById('ov-bulk').classList.add('open');}
-function closeBulk(){document.getElementById('ov-bulk').classList.remove('open');}
-function applyBulk(){
-  const purpose=document.getElementById('b-purpose').value.trim();
-  if(!purpose){alert('Purpose required.');return;}
-  const doName=document.getElementById('b-do').value.trim();
-  const ops=document.getElementById('b-ops').value.trim();
-  const remarks=document.getElementById('b-remarks').value.trim();
-  vehicles.filter(v=>!v.nil&&state[v.id].status==='in').forEach(v=>{
-    const rec={type:'bulk',issuedAt:Date.now(),doName,purpose,opsName:ops,remarks,borrowerName:'(Bulk — '+purpose+')'};
-    records[v.id]=rec;state[v.id].status='out';state[v.id].since=Date.now();
-    addLog(v.id,'out','LOANED OUT (BULK)',`${purpose}${doName?' · DO: '+doName:''}`,JSON.parse(JSON.stringify(rec)));
-  });
-  closeBulk();renderAll();persist();
-}
-
-// ─── RETURN ───────────────────────────────────────────────
-function openReturn(id){
-  pendingId=id;
-  const v=vehicles.find(x=>x.id===id);
-  document.getElementById('return-title').textContent='Return to Keypress — '+v.vehicle;
-  document.getElementById('return-sub').textContent=v.reg;
-  const r=records[id];
-  const sumEl=document.getElementById('return-summary');
-  if(r){
-    sumEl.innerHTML=`<div class="fsec-block sec-ret"><div class="fsec-title ret-t"><span class="sec-icon">🔑</span>Currently Loaned Out</div><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;"><div><div style="font-size:11px;color:var(--text-dim);">Issued: ${fmtDT(r.issuedAt)}</div><div style="font-size:11px;color:var(--text-dim);margin-top:2px;">Borrower: <b style="color:var(--text)">${r.borrowerName||r.takenBy||'—'}</b>${r.purpose?' · '+r.purpose:''}</div>${r.bunchNo?`<div style="font-size:11px;color:var(--text-dim);margin-top:2px;">Bunch: <span style="font-family:IBM Plex Mono,monospace;color:var(--key-col)">${r.bunchNo}</span> · Keys: ${r.keyCount||'?'}</div>`:''}</div><div style="text-align:right;"><div class="sw-time" id="retsw-${id}" style="font-size:18px;">${sw(r.issuedAt)}</div><div style="font-size:8px;color:var(--out);text-transform:uppercase;letter-spacing:.08em;">Loaned Out Duration</div></div></div></div>`;
-  } else sumEl.innerHTML='';
-  ['r-name','r-ops-name','r-remarks'].forEach(f=>{const e=document.getElementById(f);if(e)e.value='';});
-  if(r&&r.keyCount)document.getElementById('r-keycount').value=r.keyCount;else document.getElementById('r-keycount').value='';
-  document.getElementById('r-condition').value='Good';
-  ['sig-ret-person','sig-ret-ops'].forEach(s=>reinitSig(s));
-  document.getElementById('ov-return').classList.add('open');
-}
-function closeReturn(){document.getElementById('ov-return').classList.remove('open');pendingId=null;}
-function applyReturn(){
-  if(!pendingId)return;const id=pendingId;
-  const rname=document.getElementById('r-name').value.trim();
-  if(!rname){alert('Returning person name required.');return;}
-  const issueRec=records[id]?JSON.parse(JSON.stringify(records[id])):null;
-  const returnedAt=Date.now();
-  const returnRec={
-    returnedAt,
-    returnPersonName:rname,
-    returnPersonSig:getSigDataURL('sig-ret-person'),
-    returnOpsName:document.getElementById('r-ops-name').value.trim(),
-    returnOpsSig:getSigDataURL('sig-ret-ops'),
-    returnKeyCount:document.getElementById('r-keycount').value.trim(),
-    condition:document.getElementById('r-condition').value,
-    returnRemarks:document.getElementById('r-remarks').value.trim(),
-  };
-  const fullSnap=issueRec?{...issueRec,...returnRec,isReturn:true}:{...returnRec,isReturn:true};
-  // Check if this was a cross-midnight issue
-  const crossMidnight=issueRec&&issuedPrevDay(issueRec.issuedAt);
-  const returnDateStr=new Date(returnedAt).toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'});
-  const baseDetail=`Keys: ${returnRec.returnKeyCount||'?'} · Condition: ${returnRec.condition} · OPS: ${returnRec.returnOpsName||'—'}`;
-  const returnDetail=crossMidnight?`${baseDetail} · Returned: ${returnDateStr}`:baseDetail;
-  actingAs(rname);
-  addLog(id,'in',`RETURNED TO KEYPRESS by ${rname}`,returnDetail,fullSnap);
-  // Back-fill the original issue log entry with the return date
-  if(crossMidnight&&issueRec){
-    const issueEntry=auditLog.find(e=>e.id===id&&e.toStatus==='out'&&e.ts===issueRec.issuedAt);
-    if(issueEntry&&!issueEntry.returnedOn){
-      issueEntry.returnedOn=returnDateStr;
-      issueEntry.detail=(issueEntry.detail||'')+` · Returned: ${returnDateStr}`;
-    }
-  }
-  delete records[id];
-  state[id].status='in';state[id].since=Date.now();
-  closeReturn();renderAll();persist();
-}
-
-// ─── RECORD VIEW ──────────────────────────────────────────
-function openRecordView(id){
-  const v=vehicles.find(x=>x.id===id);
-  const r=records[id];
-  document.getElementById('rv-title').textContent='Issue Record — '+v.vehicle;
-  document.getElementById('rv-sub').textContent=v.reg+' · CURRENTLY OUT';
-  buildRecordView(r,id,true);
-  document.getElementById('ov-record').classList.add('open');
-}
-function openRecordViewFromLog(snap,vehName,vehReg){
-  document.getElementById('rv-title').textContent=(snap.isReturn?'Return Record':'Issue Record')+' — '+vehName;
-  document.getElementById('rv-sub').textContent=vehReg+' · HISTORICAL RECORD';
-  buildRecordViewFromSnap(snap);
-  document.getElementById('ov-record').classList.add('open');
-}
-function closeRecord(){document.getElementById('ov-record').classList.remove('open');}
-function buildRecordView(r,id,live){
-  const body=document.getElementById('rv-body');
-  if(!r){body.innerHTML='<div style="padding:20px;color:var(--text-muted);font-size:12px;">No active issue record.</div>';return;}
-  const dur=`<div class="sw-time k-out" id="rv-sw-${id}">${sw(r.issuedAt)}</div><div class="rv-sw-lbl">Loaned Out Duration</div>`;
-  body.innerHTML=buildIssueRecordHTML(r,dur);
-}
-function buildRecordViewFromSnap(snap){
-  const body=document.getElementById('rv-body');
-  const dur=snap.issuedAt?`<div class="sw-time" style="color:var(--text-dim)">${sw(snap.issuedAt)}</div><div class="rv-sw-lbl">Was loaned out for</div>`:'';
-  let html=buildIssueRecordHTML(snap,dur);
-  if(snap.isReturn){
-    html+=`<div class="rv-section-head" style="color:var(--in);">↩ Return Details</div><div class="rv-grid" style="padding-top:0;">
-      <div class="rv-item"><div class="rv-item-lbl">Returned At</div><div class="rv-item-val">${snap.returnedAt?fmtDT(snap.returnedAt):'—'}</div></div>
-      <div class="rv-item"><div class="rv-item-lbl">Condition</div><div class="rv-item-val">${snap.condition||'—'}</div></div>
-      <div class="rv-item"><div class="rv-item-lbl">Returned By</div><div class="rv-item-val">${snap.returnPersonName||'—'}</div></div>
-      <div class="rv-item"><div class="rv-item-lbl">Keys Counted</div><div class="rv-item-val mono">${snap.returnKeyCount||'—'}</div></div>
-      <div class="rv-item"><div class="rv-item-lbl">OPS Receiving</div><div class="rv-item-val">${snap.returnOpsName||'—'}</div></div>
-      <div class="rv-item"><div class="rv-item-lbl">Remarks</div><div class="rv-item-val">${snap.returnRemarks||'—'}</div></div>
-    </div>
-    <div class="rv-sig-row">
-      <div class="rv-sig-box"><div class="rv-sig-lbl">Returning Person Sig</div>${snap.returnPersonSig?`<img class="rv-sig-img" src="${snap.returnPersonSig}" onclick="openSigZoom(this.src)">`:'<div class="rv-nosig">No signature</div>'}</div>
-      <div class="rv-sig-box"><div class="rv-sig-lbl">OPS Receiving Sig</div>${snap.returnOpsSig?`<img class="rv-sig-img" src="${snap.returnOpsSig}" onclick="openSigZoom(this.src)">`:'<div class="rv-nosig">No signature</div>'}</div>
-    </div>`;
-  }
-  body.innerHTML=html;
-}
-function buildIssueRecordHTML(r,durHtml){
-  const quickBadge=r.type==='quick'?'<span class="rv-quick-tag" title="Issued via Quick Issue">\u26a1 QUICK ISSUE</span>':'';
-  return `<div class="rv-banner" style="background:var(--out-dim);border-bottom:1px solid rgba(249,115,22,.2);">
-    <div class="rv-banner-row"><div><div class="rv-veh">${r.purpose||'Key Issue'}${quickBadge}</div><div style="font-size:10px;color:var(--text-dim);margin-top:3px;">${fmtDT(r.issuedAt||Date.now())}</div></div><div>${durHtml}</div></div>
-  </div>
-  <div class="rv-section-head" style="color:var(--key-col);">🔑 Key Details</div>
-  <div class="rv-grid" style="padding-top:0;">
-    <div class="rv-item"><div class="rv-item-lbl">Bunch No.</div><div class="rv-item-val mono">${r.bunchNo||'—'}</div></div>
-    <div class="rv-item"><div class="rv-item-lbl">Keys in Bunch</div><div class="rv-item-val mono">${r.keyCount||'—'}</div></div>
-  </div>
-  <div class="rv-section-head" style="color:var(--borrow-col);">👤 Borrower</div>
-  <div class="rv-grid" style="padding-top:0;">
-    <div class="rv-item"><div class="rv-item-lbl">Name</div><div class="rv-item-val">${r.borrowerName||r.takenBy||'—'}</div></div>
-    <div class="rv-item"><div class="rv-item-lbl">Unit / Dept</div><div class="rv-item-val">${r.borrowerUnit||'—'}</div></div>
-    ${r.expectedReturn?`<div class="rv-item"><div class="rv-item-lbl">Expected Return</div><div class="rv-item-val">${fmtDT(new Date(r.expectedReturn).getTime())}</div></div>`:''}
-  </div>
-  <div class="rv-sig-row">
-    <div class="rv-sig-box"><div class="rv-sig-lbl">Borrower Signature</div>${r.borrowerSig?`<img class="rv-sig-img" src="${r.borrowerSig}" onclick="openSigZoom(this.src)">`:'<div class="rv-nosig">No signature captured</div>'}</div>
-    <div class="rv-sig-box"><div class="rv-sig-lbl">OPS Issuing Signature</div>${r.opsSig?`<img class="rv-sig-img" src="${r.opsSig}" onclick="openSigZoom(this.src)">`:'<div class="rv-nosig">No signature captured</div>'}</div>
-  </div>`;
-}
-
-// ─── OFF-RUN ──────────────────────────────────────────────
-function openOffrun(id){
-  pendingId=id;
-  const v=vehicles.find(x=>x.id===id);
-  const st=state[id];
-  document.getElementById('offrun-title').textContent='Set Off-Run — '+v.vehicle;
-  document.getElementById('offrun-sub').textContent=v.reg;
-  document.getElementById('or-actby').value='';
-  document.getElementById('or-reason').value=st.offrunReason||'';
-  document.getElementById('or-from').value=st.offrunFrom||new Date().toISOString().slice(0,10);
-  document.getElementById('or-until').value=st.offrunUntil||'';
-  document.getElementById('ov-offrun').classList.add('open');
-  setTimeout(()=>document.getElementById('or-actby').focus(),80);
-}
-function closeOffrun(){document.getElementById('ov-offrun').classList.remove('open');pendingId=null;}
-function _baseApplyOffrun(){
-  if(!pendingId)return;const id=pendingId;
-  const st=state[id];
-  st.offrunReason=document.getElementById('or-reason').value.trim();
-  st.offrunFrom=document.getElementById('or-from').value;
-  st.offrunUntil=document.getElementById('or-until').value;
-  st.status='offrun';st.since=Date.now();
-  addLog(id,'offrun','OFF-RUN',st.offrunReason+(st.offrunUntil?' · Until '+fmtD(st.offrunUntil):' · Until TBD'));
-  closeOffrun();renderAll();persist();
-}
-
-// ─── LOC EDIT ─────────────────────────────────────────────
-function editLoc(id){document.getElementById('loc-t-'+id).style.display='none';const i=document.getElementById('loc-i-'+id);i.style.display='inline-block';i.focus();i.select();}
-function saveLoc(id){
-  const t=document.getElementById('loc-t-'+id),i=document.getElementById('loc-i-'+id);
-  if(!t||!i)return;
-  const v=i.value.trim()||state[id].location;
-  state[id].location=v;vehicles.find(x=>x.id===id).location=v;
-  t.innerHTML=`<span class="loc-chip-icon">${locEmoji(v)}</span>${v}`;
-  t.style.display='';i.style.display='none';persist();
-}
-function locKey(e,id){if(e.key==='Enter')saveLoc(id);if(e.key==='Escape'){document.getElementById('loc-t-'+id).style.display='';document.getElementById('loc-i-'+id).style.display='none';}}
-
-// ─── LOGS ─────────────────────────────────────────────────
-function openLog(id){
-  logPendingVehicleId=id;
-  const v=vehicles.find(x=>x.id===id);
-  document.getElementById('log-t').textContent=v.vehicle+' — '+v.reg;
-  document.getElementById('log-s').textContent='Individual custody log';
-  renderLogEntries(auditLog.filter(e=>e.id===id),'log-b');
-  document.getElementById('log-ov').classList.add('open');
-}
-function closeLog(){document.getElementById('log-ov').classList.remove('open');logPendingVehicleId=null;}
-let allFilter='all';
-function openAllLogs(){
-  allFilter='all';allLogDateFilter='';
-  if(!cdpState['cdp-log'])cdpInit('cdp-log');
-  // reset log picker display
-  cdpState['cdp-log'].sel1=null;cdpState['cdp-log'].sel2=null;
-  const now=new Date();cdpState['cdp-log'].year=now.getFullYear();cdpState['cdp-log'].month=now.getMonth();
-  cdpRender('cdp-log');
-  const btn=document.getElementById('cdp-log-display');
-  if(btn){btn.textContent='All dates…';btn.classList.remove('has-value');}
-  renderAllFilters();
-  refreshAllLog();
-  document.getElementById('alllog-ov').classList.add('open');
-}
-function closeAllLog(){document.getElementById('alllog-ov').classList.remove('open');}
-function renderAllFilters(){
-  const used=[...new Set(auditLog.map(e=>e.id))];
-  const row=document.getElementById('alllog-filters');row.innerHTML='';
-  const mk=(key,label)=>{const b=document.createElement('button');b.className='lf-btn'+(allFilter===key?' active':'');b.textContent=label;b.onclick=()=>{allFilter=key;renderAllFilters();refreshAllLog();};row.appendChild(b);};
-  mk('all','All');
-  vehicles.filter(v=>!v.nil&&used.includes(v.id)).forEach(v=>mk(String(v.id),v.vehicle+' · '+v.reg));
-}
-function renderLogEntries(entries,bid,showVeh=false){
-  const body=document.getElementById(bid);
-  if(!entries.length){body.innerHTML='<div class="log-empty">No records yet.</div>';return;}
-  const col={in:'var(--in)',out:'var(--out)',offrun:'var(--offrun)'};
-  body.innerHTML=entries.map((e,i)=>{
-    const c=col[e.toStatus]||'var(--nil-text)';
-    const hasRec=!!(e.rec);
-    return`<div class="log-entry"><div class="log-ts">${fmtDT(e.ts)}</div><div class="log-dot-col"><div class="log-dot" style="background:${c}"></div>${i<entries.length-1?'<div class="log-line"></div>':''}</div><div class="log-cnt"><div class="log-act">${showVeh?`<b>${e.vehicle}</b> · `:''}${e.toLabel}</div>${e.detail?`<div class="log-det">${e.detail}</div>`:''} ${showVeh?`<div class="log-det">${e.reg}</div>`:''}<div class="log-det" style="color:var(--text-muted);font-size:9px;margin-top:3px;">👤 ${e.by||'Unknown'}</div>${hasRec?`<button class="log-view-rec" onclick='openRecordViewFromLog(${JSON.stringify(e.rec)},${JSON.stringify(e.vehicle)},${JSON.stringify(e.reg)})'>View Full Record →</button>`:''}</div></div>`;
-  }).join('');
-}
-
-// ─── VIEW / THEME ─────────────────────────────────────────
-function setView(m){viewMode=m;const bg=document.getElementById('btn-grid');const br=document.getElementById('btn-row');if(bg)bg.classList.toggle('active',m==='grid');if(br)br.classList.toggle('active',m==='row');renderAll();persist();}
-function toggleTheme(){
-  const l=document.documentElement.classList.toggle('light');
-  document.getElementById('th-lbl').textContent=l?'Dark':'Light';
-  // update sig stroke colors
-  Object.values(sigPads).forEach(p=>{p.ctx.strokeStyle=l?'#1e293b':'#e2e8f0';});
-  if(_sigModalCtx)_sigModalCtx.strokeStyle=l?'#1e293b':'#e2e8f0';
-}
-
-// ─── CLOCK + TICKS ────────────────────────────────────────
-function tick(){
-  const now=new Date();
-  document.getElementById('clock-time').textContent=now.toTimeString().slice(0,8);
-  document.getElementById('clock-date').textContent=now.toLocaleDateString('en-GB',{weekday:'short',day:'2-digit',month:'short',year:'numeric'}).toUpperCase();
-  // Re-check backup reminder banner once a minute (time-based trigger doesn't need per-second polling)
-  if(now.getSeconds()===0)updateExportBanner();
-  vehicles.filter(v=>!v.nil).forEach(v=>{
-    const st=state[v.id];const el=document.getElementById('sw-'+v.id);if(!el)return;
-    el.textContent=st.status==='out'?sw(st.since):elapsed(st.since)+' ago';
-  });
-  // live record view
-  vehicles.forEach(v=>{
-    const r=records[v.id];if(!r)return;
-    const el=document.getElementById('rv-sw-'+v.id);if(el)el.textContent=sw(r.issuedAt);
-    const rs=document.getElementById('retsw-'+v.id);if(rs)rs.textContent=sw(r.issuedAt);
-  });
-  // ── Update close bar sub-text with live key count ──
-  const kpCloseBar = document.getElementById('kp-close-bar');
-  const kpCloseSub = document.getElementById('kp-close-bar-sub');
-  if (kpCloseBar && kpCloseSub && kpStatus === 'open') {
-    const outCount = vehicles.filter(v => !v.nil && state[v.id]?.status === 'out').length;
-    const offrunCount = vehicles.filter(v => !v.nil && state[v.id]?.status === 'offrun').length;
-    if (outCount > 0) {
-      kpCloseSub.textContent = `⚠ ${outCount} key(s) still loaned out — return before closing.`;
-      kpCloseSub.style.color = 'var(--out)';
-    } else if (offrunCount > 0) {
-      kpCloseSub.textContent = `${offrunCount} vehicle(s) off-run · All other keys are in. Ready to close.`;
-      kpCloseSub.style.color = 'var(--text-dim)';
-    } else {
-      kpCloseSub.textContent = 'All keys in keypress. Transport driver to sign off.';
-      kpCloseSub.style.color = 'var(--in)';
-    }
-  }
-  // ── closing-soon banner — suppress if already closed ──
-  const cb=document.getElementById('closing-banner');
-  if (kpStatus === 'closed') { if(cb) cb.style.display='none'; return; }
-  const midnight=new Date(now);midnight.setHours(24,0,0,0);
-  const secsLeft=Math.floor((midnight-now)/1000);
-  const minsLeft=Math.floor(secsLeft/60);
-  if(secsLeft<=60){
-    cb.style.display='flex';
-    cb.className='closing-banner tier-1';
-    document.getElementById('closing-icon').textContent='🚨';
-    document.getElementById('closing-title').textContent='Keypress Closing in Under 1 Minute!';
-    document.getElementById('closing-sub').textContent='Return all keys and sign off the book NOW.';
-    const s=secsLeft%60;
-    document.getElementById('closing-countdown').textContent=`0:${String(s).padStart(2,'0')}`;
-  } else if(secsLeft<=15*60){
-    cb.style.display='flex';
-    cb.className='closing-banner tier-15';
-    document.getElementById('closing-icon').textContent='⚠️';
-    document.getElementById('closing-title').textContent='Keypress Closes in 15 Minutes';
-    document.getElementById('closing-sub').textContent='Ensure all keys are returned and signed off before midnight.';
-    const m=Math.floor(secsLeft/60),s=secsLeft%60;
-    document.getElementById('closing-countdown').textContent=`${m}:${String(s).padStart(2,'0')}`;
-  } else if(secsLeft<=30*60){
-    cb.style.display='flex';
-    cb.className='closing-banner tier-30';
-    document.getElementById('closing-icon').textContent='🕛';
-    document.getElementById('closing-title').textContent='Keypress Closes in 30 Minutes';
-    document.getElementById('closing-sub').textContent='Ensure all keys are returned and signed off before midnight.';
-    const m=Math.floor(secsLeft/60),s=secsLeft%60;
-    document.getElementById('closing-countdown').textContent=`${m}:${String(s).padStart(2,'0')}`;
-  } else {
-    cb.style.display='none';
-  }
-}
-
-// ─── KEY COUNT TRACK ──────────────────────────────────────
-function setKeyCount(n){
-  const inp=document.getElementById('i-keycount');
-  inp.value=(n||'');
-  syncKcTrack();
-}
-function syncKcTrack(){
-  const inp=document.getElementById('i-keycount');
-  const v=parseInt(inp.value);
-  const track=document.getElementById('kc-track');
-  if(!track)return;
-  // preset slots 1-6
-  track.querySelectorAll('.kc-slot[data-n]').forEach(b=>{
-    b.classList.toggle('kc-active',parseInt(b.dataset.n)===v);
-  });
-  // custom slot active if value >6 or if custom input is the source
-  const custom=document.getElementById('kc-custom-slot');
-  if(custom)custom.classList.toggle('kc-active',v>6||(inp.value!==''&&isNaN(v)===false&&v>6));
-}
-function syncKeycountBtns(){syncKcTrack();}// compat alias
-function resetKeycountBtns(){
-  const inp=document.getElementById('i-keycount');
-  if(inp)inp.value='';
-  syncKcTrack();
-}
-function kcFocusCustom(){
-  const inp=document.getElementById('i-keycount');
-  inp.focus();inp.select();
-  const custom=document.getElementById('kc-custom-slot');
-  if(custom)custom.classList.add('kc-active');
-  // deactivate preset slots
-  document.querySelectorAll('.kc-slot[data-n]').forEach(b=>b.classList.remove('kc-active'));
-}
-function kcCustomInput(){
-  const inp=document.getElementById('i-keycount');
-  let v=parseInt(inp.value);
-  if(v>100)inp.value=100;
-  if(v<1&&inp.value!=='')inp.value=1;
-  syncKcTrack();
-}
-function kcCustomBlur(){syncKcTrack();}
-function kcCustomKey(e){
-  if(e.key==='Enter'){document.getElementById('i-keycount').blur();syncKcTrack();}
-}
-// Scroll wheel on track to increment/decrement
-document.addEventListener('DOMContentLoaded',()=>{
-  const track=document.getElementById('kc-track');
-  if(!track)return;
-  track.addEventListener('wheel',e=>{
-    e.preventDefault();
-    const inp=document.getElementById('i-keycount');
-    let v=parseInt(inp.value)||0;
-    v+=(e.deltaY<0?1:-1);
-    v=Math.max(1,Math.min(100,v));
-    inp.value=v;
-    syncKcTrack();
-  },{passive:false});
-});
-
-// ─── CUSTOM DATE PICKER ───────────────────────────────────
-const cdpState={};
-function cdpInit(id){
-  const now=new Date();
-  cdpState[id]={year:now.getFullYear(),month:now.getMonth(),sel1:null,sel2:null};
-  cdpRender(id);
-}
-function toggleDatePicker(id){
-  const panel=document.getElementById(id+'-panel');
-  if(!cdpState[id])cdpInit(id);
-  const isOpen=panel.classList.contains('open');
-  document.querySelectorAll('.cdp-panel.open').forEach(p=>p.classList.remove('open'));
-  if(!isOpen){
-    panel.classList.add('open');
-    cdpUpdateHint(id);
-    // Smart flip-up: check if panel overflows viewport bottom
-    requestAnimationFrame(()=>{
-      const r=panel.getBoundingClientRect();
-      const vh=window.innerHeight;
-      if(r.bottom>vh-10){
-        // flip above the trigger button
-        panel.style.top='auto';
-        panel.style.bottom='calc(100% + 6px)';
-      } else {
-        panel.style.top='';
-        panel.style.bottom='';
-      }
-    });
-  }
-}
-function cdpConfirm(id){
-  // Commit current selection and close
-  const s=cdpState[id];
-  if(!s)return;
-  const hid=document.getElementById('i-return-dt');
-  const btn=document.getElementById(id+'-display');
-  if(s.sel1&&s.sel2){
-    if(hid)hid.value=fmtDLocal(s.sel1)+'|'+fmtDLocal(s.sel2);
-    if(btn){btn.textContent=fmtDShort(s.sel1)+' → '+fmtDShort(s.sel2);btn.classList.add('has-value');}
-  } else if(s.sel1){
-    if(hid)hid.value=fmtDLocal(s.sel1);
-    if(btn){btn.textContent=fmtDShort(s.sel1);btn.classList.add('has-value');}
-  } else {
-    if(hid)hid.value='';
-    if(btn){btn.textContent='Select date…';btn.classList.remove('has-value');}
-  }
-  document.getElementById(id+'-panel').classList.remove('open');
-}
-function cdpSelectToday(id){
-  const today=new Date();today.setHours(0,0,0,0);
-  const s=cdpState[id]||(cdpState[id]={year:today.getFullYear(),month:today.getMonth(),sel1:null,sel2:null});
-  s.sel1=today;s.sel2=null;
-  s.year=today.getFullYear();s.month=today.getMonth();
-  const btn=document.getElementById(id+'-display');
-  const hid=document.getElementById('i-return-dt');
-  if(btn){btn.textContent=fmtDShort(today);btn.classList.add('has-value');}
-  if(hid)hid.value=fmtDLocal(today);
-  document.getElementById(id+'-panel').classList.remove('open');
-  cdpRender(id);
-}
-function cdpUpdateHint(id){
-  const hint=document.getElementById(id+'-hint');
-  if(!hint)return;
-  const s=cdpState[id];
-  if(!s||!s.sel1){hint.textContent='Select start date';hint.className='cdp-hint';return;}
-  if(s.sel1&&!s.sel2){hint.textContent='Now pick an end date (or press Done)';hint.className='cdp-hint has-sel1';return;}
-  if(s.sel1&&s.sel2){hint.textContent=fmtDShort(s.sel1)+' → '+fmtDShort(s.sel2);hint.className='cdp-hint has-sel1';return;}
-}
-function cdpPrevMonth(id){
-  const s=cdpState[id];
-  // Don't navigate before current month for issue picker
-  const now=new Date();
-  if(id==='cdp-issue'&&s.year===now.getFullYear()&&s.month===now.getMonth())return;
-  s.month--;if(s.month<0){s.month=11;s.year--;}cdpRender(id);
-}
-function cdpNextMonth(id){cdpState[id].month++;if(cdpState[id].month>11){cdpState[id].month=0;cdpState[id].year++;}cdpRender(id);}
-function clearDatePicker(id){
-  if(!cdpState[id])cdpInit(id);
-  cdpState[id].sel1=null;cdpState[id].sel2=null;
-  const hid=document.getElementById('i-return-dt');
-  if(hid)hid.value='';
-  const btn=document.getElementById(id+'-display');
-  if(btn){btn.textContent='Select date…';btn.classList.remove('has-value');}
-  cdpUpdateHint(id);
-  cdpRender(id);
-}
-function resetDatePicker(id){
-  if(!cdpState[id]){cdpInit(id);return;}
-  const now=new Date();
-  cdpState[id].year=now.getFullYear();cdpState[id].month=now.getMonth();
-  cdpState[id].sel1=null;cdpState[id].sel2=null;
-  const btn=document.getElementById(id+'-display');
-  if(btn){btn.textContent='Select date…';btn.classList.remove('has-value');}
-  cdpUpdateHint(id);
-  cdpRender(id);
-}
-function cdpSelectDay(id,year,month,day){
-  const s=cdpState[id];
-  const clicked=new Date(year,month,day);
-  // Issue picker: single date, auto-close on click
-  if(id==='cdp-issue'){
-    s.sel1=clicked;s.sel2=null;
-    const btn=document.getElementById(id+'-display');
-    const hid=document.getElementById('i-return-dt');
-    if(btn){btn.textContent=fmtDShort(clicked);btn.classList.add('has-value');}
-    if(hid)hid.value=fmtDLocal(clicked);
-    document.getElementById(id+'-panel').classList.remove('open');
-    cdpRender(id);
-    return;
-  }
-  // Log picker: single date, auto-close
-  if(id==='cdp-log'){
-    s.sel1=clicked;s.sel2=null;
-    const btn=document.getElementById(id+'-display');
-    if(btn){btn.textContent=fmtDShort(clicked);btn.classList.add('has-value');}
-    allLogDateFilter=fmtDLocal(clicked);
-    refreshAllLog();
-    document.getElementById(id+'-panel').classList.remove('open');
-    cdpRender(id);
-    return;
-  }
-  // Generic fallback (other pickers)
-  if(!s.sel1||(s.sel1&&s.sel2)){s.sel1=clicked;s.sel2=null;}
-  else{if(clicked<s.sel1){s.sel2=s.sel1;s.sel1=clicked;}else{s.sel2=clicked;}}
-  cdpRender(id);
-}
-function fmtDLocal(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
-function fmtDShort(d){const ms=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];return String(d.getDate()).padStart(2,'0')+' '+ms[d.getMonth()];}
-function cdpRender(id){
-  const s=cdpState[id];if(!s)return;
-  const el=document.getElementById(id+'-days');const lbl=document.getElementById(id+'-lbl');
-  if(!el||!lbl)return;
-  const ms=['January','February','March','April','May','June','July','August','September','October','November','December'];
-  lbl.textContent=ms[s.month]+' '+s.year;
-  const today=new Date();today.setHours(0,0,0,0);
-  const firstDay=new Date(s.year,s.month,1).getDay();
-  const daysInMonth=new Date(s.year,s.month+1,0).getDate();
-  let html='';
-  for(let i=0;i<firstDay;i++)html+='<button class="cdp-day cdp-empty" tabindex="-1"></button>';
-  for(let d=1;d<=daysInMonth;d++){
-    const dt=new Date(s.year,s.month,d);
-    const isPast=dt<today;
-    const isToday=dt.getTime()===today.getTime();
-    let cls='cdp-day';
-    // Issue picker: block past dates; log picker: allow all
-    if(isPast&&id!=='cdp-log')cls+=' cdp-past';
-    if(isToday)cls+=' cdp-today';
-    if(s.sel1&&s.sel2){
-      if(dt.getTime()===s.sel1.getTime())cls+=' cdp-sel1';
-      else if(dt.getTime()===s.sel2.getTime())cls+=' cdp-sel2';
-      else if(dt>s.sel1&&dt<s.sel2)cls+=' cdp-in-range';
-    } else if(s.sel1&&dt.getTime()===s.sel1.getTime()){
-      cls+=' cdp-sel-same';
-    }
-    const isClickable=isToday||(id==='cdp-log')||!isPast;
-    html+=`<button class="${cls}" ${isClickable?`onclick="cdpSelectDay('${id}',${s.year},${s.month},${d})"`:''} tabindex="${isClickable?0:-1}">${d}</button>`;
-  }
-  el.innerHTML=html;
-}
-// Close picker on outside click (but not Done/Clear/Today)
-document.addEventListener('click',e=>{
-  if(!e.target.closest('.custom-datepicker')){
-    // Outside click on issue picker: don't commit, just close visually
-    document.querySelectorAll('.cdp-panel.open').forEach(p=>p.classList.remove('open'));
-  }
-});
-
-// ─── ADMIN PIN ────────────────────────────────────────────
-// Change this to your own PIN before going live
-const ADMIN_PIN = '1234';
-let adminUnlocked = false;
-
-function checkAdminPin(onSuccess) {
-  if (adminUnlocked) { onSuccess(); return; }
-  const pin = prompt('Admin PIN:');
-  if (pin === null) return;
-  if (pin === ADMIN_PIN) { adminUnlocked = true; onSuccess(); }
-  else alert('Incorrect PIN.');
-}
-
-// Expose admin buttons always — PIN gates the action, not the button
-document.addEventListener('DOMContentLoaded', () => {
-  ['btn-fleet-mgr','btn-dummy','btn-clear-all'].forEach(id => {
-    const el = document.getElementById(id); if (el) el.style.display = 'flex';
-  });
-  document.getElementById('id-badge') && (document.getElementById('id-badge').style.display = 'none');
-});
-
-// Wrap admin actions behind PIN check
-const _origOpenFleetMgr = openFleetMgr;
-openFleetMgr = () => checkAdminPin(_origOpenFleetMgr);
-const _origAddDummy = addDummyRecords;
-addDummyRecords = () => checkAdminPin(_origAddDummy);
-const _origClearAll = confirmClearAll;
-confirmClearAll = () => checkAdminPin(_origClearAll);
-
-// addLog stamps 'by' from the action context — set per-action via actingAs()
-let _actionBy = null;
-function actingAs(name) { _actionBy = name || null; }
-
-// ─── FLEET MANAGEMENT CRUD ────────────────────────────────
-let fleetEditingId = null; // null = add mode, number = edit mode
-
-function openFleetMgr() {
-  renderFleetMgrList();
-  document.getElementById('ov-fleet-mgr').classList.add('open');
-}
-function closeFleetMgr() {
-  document.getElementById('ov-fleet-mgr').classList.remove('open');
-}
-function renderFleetMgrList() {
-  const list = document.getElementById('fleet-mgr-list');
-  const active = vehicles.filter(v => !v.nil);
-  const nil = vehicles.filter(v => v.nil);
-  const all = [...active, ...nil];
-  document.getElementById('fleet-mgr-count').textContent = `${active.length} active · ${nil.length} NIL`;
-  const statusDot = (id, isNil) => {
-    if (isNil) return `<span class="fmv-status-dot" style="background:var(--nil)"></span>`;
-    const s = state[id]?.status || 'in';
-    const col = {in:'var(--in)', out:'var(--out)', offrun:'var(--offrun)'}[s] || 'var(--nil)';
-    return `<span class="fmv-status-dot" style="background:${col}"></span>`;
-  };
-  list.innerHTML = all.map(v => `
-    <div class="fmv-row${v.nil?' fmv-nil-row':''}">
-      <div class="fmv-keyno">${v.bunchNo||'—'}</div>
-      <div class="fmv-ico">${v.nil?'⊘':ico(v.vehicle)}</div>
-      <div class="fmv-info">
-        <div class="fmv-name">${v.vehicle}${v.nil?' <span style="font-size:9px;color:var(--nil-text);font-weight:400;">[NIL]</span>':''}</div>
-        <div class="fmv-reg">${v.reg}</div>
-        <div class="fmv-loc">📍 ${state[v.id]?.location||v.location||'—'}</div>
-      </div>
-      <div class="fmv-status">${statusDot(v.id, !!v.nil)}</div>
-      <div class="fmv-actions">
-        <button class="fmv-btn edit-btn" onclick="openVehForm(${v.id})">✏ Edit</button>
-        <button class="fmv-btn del-btn" onclick="deleteVehicle(${v.id})" ${(!v.nil && state[v.id]?.status!=='in')?'title="Vehicle is currently out or off-run — return it first"':''}>🗑 Delete</button>
-      </div>
-    </div>
-  `).join('');
-}
-
-function openVehForm(id) {
-  fleetEditingId = id;
-  const isEdit = id !== null;
-  document.getElementById('veh-form-title').textContent = isEdit ? 'Edit Vehicle' : 'Add Vehicle';
-  if (isEdit) {
-    const v = vehicles.find(x => x.id === id);
-    document.getElementById('vf-name').value = v.vehicle;
-    document.getElementById('vf-bunchno').value = v.bunchNo || '';
-    document.getElementById('vf-reg').value = v.reg;
-    document.getElementById('vf-loc').value = state[id]?.location || v.location || '';
-    document.getElementById('vf-nil').checked = !!v.nil;
-    document.getElementById('veh-form-sub').textContent = `Editing: ${v.vehicle} · ${v.reg}`;
-  } else {
-    ['vf-name','vf-bunchno','vf-reg','vf-loc'].forEach(f => { document.getElementById(f).value = ''; });
-    document.getElementById('vf-nil').checked = false;
-    document.getElementById('veh-form-sub').textContent = 'New fleet entry';
-  }
-  document.getElementById('veh-form-save-btn').textContent = isEdit ? 'Save Changes' : 'Add Vehicle';
-  document.getElementById('ov-veh-form').classList.add('open');
-}
-function closeVehForm() {
-  document.getElementById('ov-veh-form').classList.remove('open');
-  fleetEditingId = null;
-}
-function saveVehForm() {
-  const name = document.getElementById('vf-name').value.trim();
-  const reg = document.getElementById('vf-reg').value.trim();
-  const bunchNo = document.getElementById('vf-bunchno').value.trim();
-  const loc = document.getElementById('vf-loc').value.trim();
-  const isNil = document.getElementById('vf-nil').checked;
-  if (!name) { alert('Vehicle name is required.'); return; }
-  if (!reg)  { alert('Registration / call sign is required.'); return; }
-
-  if (fleetEditingId !== null) {
-    // ── EDIT ──
-    const id = fleetEditingId;
-    const v = vehicles.find(x => x.id === id);
-    const changes = [];
-    if (v.vehicle !== name)   changes.push(`Name: "${v.vehicle}" → "${name}"`);
-    if (v.reg !== reg)        changes.push(`Reg: "${v.reg}" → "${reg}"`);
-    if ((v.bunchNo||'') !== bunchNo) changes.push(`Key#: "${v.bunchNo||'—'}" → "${bunchNo||'—'}"`);
-    if ((state[id]?.location||v.location||'') !== loc) changes.push(`Loc: "${state[id]?.location||v.location||'—'}" → "${loc||'—'}"`);
-    const wasNil = !!v.nil;
-    if (wasNil !== isNil) changes.push(isNil ? 'Marked NIL' : 'Restored from NIL');
-    v.vehicle = name; v.reg = reg; v.bunchNo = bunchNo;
-    if (state[id]) state[id].location = loc || state[id].location;
-    v.location = loc || v.location;
-    v.nil = isNil || undefined;
-    if (!isNil) delete v.nil;
-    if (changes.length) {
-      addLog(id, state[id]?.status || 'in', 'FLEET EDIT', changes.join(' · '));
-    }
-  } else {
-    // ── ADD ──
-    const newId = Math.max(0, ...vehicles.map(x => x.id)) + 1;
-    const newVeh = { id: newId, vehicle: name, reg, location: loc || 'YARD', bunchNo };
-    if (isNil) newVeh.nil = true;
-    vehicles.push(newVeh);
-    state[newId] = { status: 'in', since: Date.now(), location: loc || 'YARD', remarks: '', offrunReason: '', offrunFrom: '', offrunUntil: '' };
-    addLog(newId, 'in', 'FLEET ADDED', `${name} · ${reg}${bunchNo?' · Key #'+bunchNo:''}${isNil?' · [NIL]':''}`);
-  }
-  closeVehForm();
-  renderFleetMgrList();
-  renderAll();
-  persist();
-}
-function deleteVehicle(id) {
-  const v = vehicles.find(x => x.id === id);
-  if (!v) return;
-  const st = state[id];
-  if (st && st.status !== 'in') {
-    alert(`Cannot delete ${v.vehicle}: it is currently "${st.status}". Return or restore it to keypress first.`);
-    return;
-  }
-  if (!confirm(`Delete "${v.vehicle}" (${v.reg}) from the fleet?\n\nKey #${v.bunchNo||'N/A'} will be permanently removed. Its audit log entries will be kept.\n\nThis cannot be undone.`)) return;
-  addLog(id, 'in', 'FLEET DELETED', `${v.vehicle} · ${v.reg}${v.bunchNo?' · Key #'+v.bunchNo:''} — removed from fleet`);
-  const idx = vehicles.indexOf(v);
-  if (idx > -1) vehicles.splice(idx, 1);
-  delete state[id];
-  delete records[id];
-  renderFleetMgrList();
-  renderAll();
-  persist();
-}
-
-// ─── PERSIST: save custom vehicles too ────────────────────
-// (Override persist to also save vehicles array)
-const _origPersist = persist;
-// Redefine persist to also save vehicles
-function persist(){
-  try{
-    localStorage.setItem(SK, JSON.stringify({
-      state: Object.fromEntries(Object.entries(state)),
-      records, auditLog: auditLog.slice(0,500),
-      viewMode, sortMode, sortDir, filterMode,
-      locs: vehicles.map(v=>({id:v.id, loc:v.location})),
-      customVehicles: vehicles,
-      kpStatus, kpLog: kpLog.slice(0,200)
-    }));
-  }catch(e){}
-}
-// ─── HYDRATE: restore custom vehicles ─────────────────────
-const _origHydrate = hydrate;
-// patch hydrate to restore customVehicles
-(function patchHydrate(){
-  const origH = hydrate;
-  window._hydratePatched = function(){
-    try{
-      const d = JSON.parse(localStorage.getItem(SK)||'null');
-      if(!d) return;
-      // Restore custom vehicles if saved
-      if(d.customVehicles && Array.isArray(d.customVehicles) && d.customVehicles.length){
-        vehicles.length = 0;
-        d.customVehicles.forEach(v => vehicles.push(v));
-      }
-      (d.locs||[]).forEach(l=>{const v=vehicles.find(x=>x.id===l.id);if(v)v.location=l.loc;});
-      // Init state for any vehicles missing state
-      vehicles.forEach(v=>{
-        if(!state[v.id]) state[v.id]={status:'in',since:Date.now(),location:v.location,remarks:'',offrunReason:'',offrunFrom:'',offrunUntil:''};
-      });
-      Object.entries(d.state||{}).forEach(([k,s])=>{const id=+k;if(state[id])Object.assign(state[id],s);});
-      if(d.records) Object.assign(records,d.records);
-      if(d.auditLog) auditLog.push(...d.auditLog);
-      if(d.viewMode) viewMode=d.viewMode;
-      if(d.sortMode) sortMode=d.sortMode;
-      if(d.sortDir)  sortDir=d.sortDir;
-      if(d.filterMode) filterMode=d.filterMode;
-      // Restore keypress open/close state
-      if(d.kpStatus) kpStatus = d.kpStatus;
-      if(d.kpLog) kpLog = d.kpLog;
-    }catch(e){}
-  };
-})();
-
-// ─── REMARKS: audit log on save ──────────────────────────
-function saveRemarksInline(id){
-  const inp=document.getElementById('rmki-'+id);if(!inp)return;
-  const by=(document.getElementById('rmkby-'+id)||{value:''}).value.trim().toUpperCase()||null;
-  const oldVal=(state[id].remarks||'').trim();
-  const newVal=inp.value.trim();
-  state[id].remarks=newVal;
-  if(newVal!==oldVal){
-    if(newVal){ actingAs(by); addLog(id,state[id].status,'REMARK UPDATED',`"${newVal}"${oldVal?' (was: "'+oldVal+'")':''}`);}
-    else{       actingAs(by); addLog(id,state[id].status,'REMARK CLEARED',oldVal?`Was: "${oldVal}"`:'');}
-  }
-  cancelRemarksInline(id);renderAll();persist();
-}
-function clearRemarksInline(id){
-  const by=(document.getElementById('rmkby-'+id)||{value:''}).value.trim().toUpperCase()||null;
-  const oldVal=(state[id].remarks||'').trim();
-  state[id].remarks='';
-  if(oldVal){ actingAs(by); addLog(id,state[id].status,'REMARK CLEARED',`Was: "${oldVal}"`);}
-  cancelRemarksInline(id);renderAll();persist();
-}
-
-// ─── OFF-RUN: detailed audit log ─────────────────────────
-function applyOffrun(){
-  if(!pendingId)return;const id=pendingId;
-  const st=state[id];
-  const by=(document.getElementById('or-actby').value||'').trim().toUpperCase()||null;
-  const oldReason=st.offrunReason||'';
-  const oldFrom=st.offrunFrom||'';
-  const oldUntil=st.offrunUntil||'';
-  const newReason=document.getElementById('or-reason').value.trim();
-  const newFrom=document.getElementById('or-from').value;
-  const newUntil=document.getElementById('or-until').value;
-  const wasOffrun = st.status==='offrun';
-  st.offrunReason=newReason;
-  st.offrunFrom=newFrom;
-  st.offrunUntil=newUntil;
-  st.status='offrun';st.since=Date.now();
-  const detail=`${newReason||'(no reason)'}${newFrom?' · From: '+fmtD(newFrom):''}${newUntil?' · Until: '+fmtD(newUntil):' · Until: TBD'}`;
-  if(wasOffrun){
-    const changes=[];
-    if(newReason!==oldReason) changes.push(`Reason: "${oldReason||'—'}" → "${newReason||'—'}"`);
-    if(newFrom!==oldFrom)     changes.push(`From: "${oldFrom?fmtD(oldFrom):'—'}" → "${newFrom?fmtD(newFrom):'—'}"`);
-    if(newUntil!==oldUntil)   changes.push(`Until: "${oldUntil?fmtD(oldUntil):'TBD'}" → "${newUntil?fmtD(newUntil):'TBD'}"`);
-    actingAs(by);
-    addLog(id,'offrun','OFF-RUN UPDATED', changes.length?changes.join(' · '):detail);
-  } else {
-    actingAs(by);
-    addLog(id,'offrun','OFF-RUN',detail);
-  }
-  closeOffrun();renderAll();persist();
-}
-
-// ─── BACK TO KEYPRESS: log reason ────────────────────────
-const _origSetStatusDirect = setStatusDirect;
-function setStatusDirect(id,newStatus){
-  const st=state[id];
-  const wasOffrun=st.status==='offrun';
-  if(newStatus==='in'){
-    if(wasOffrun){
-      addLog(id,'in','RETURNED FROM OFF-RUN',`${st.offrunReason||'Off-run cleared'}${st.offrunFrom?' · Was from '+fmtD(st.offrunFrom):''}${st.offrunUntil?' · Until '+fmtD(st.offrunUntil):''}`);
-    }
-    delete records[id];st.offrunReason='';st.offrunFrom='';st.offrunUntil='';
-  }
-  st.status=newStatus;st.since=Date.now();
-  if(newStatus!=='in'&&!wasOffrun) addLog(id,newStatus,statusLabel(st));
-  renderAll();persist();
-}
-
-// ─── KEYPRESS OPEN / CLOSE SYSTEM ────────────────────────
-// State: kpStatus = 'open' | 'closed'
-// kpLog: array of { action, ts, by, driver, driverSig, early, earlyReason, specialPurpose }
-let kpStatus = 'open';
-let kpLog = [];
-
-function kpIsLocked() { return kpStatus === 'closed'; }
-
-// Block all key actions when closed
-function kpGuard() {
-  if (!kpIsLocked()) return false; // not locked, allow
-  alert('Keypress is closed. Open it first.');
-  return true; // locked, block
-}
-
-// ── CLOSE modal ──────────────────────────────────────────
-function openKpCloseModal() {
-  // Warn if keys are still out
-  const out = vehicles.filter(v => !v.nil && state[v.id]?.status === 'out');
-  if (out.length) {
-    const names = out.map(v => `${v.vehicle} (Key #${v.bunchNo})`).join(', ');
-    if (!confirm(`⚠ ${out.length} key(s) are still loaned out:\n${names}\n\nYou should return all keys before closing.\n\nClose anyway?`)) return;
-  }
-  document.getElementById('kp-close-driver').value = '';
-  document.getElementById('kp-close-early-chk').checked = false;
-  document.getElementById('kp-close-early-reason').value = '';
-  document.getElementById('kp-early-reason-row').classList.remove('visible');
-  reinitSig('sig-kp-close');
-  document.getElementById('ov-kp-close').classList.add('open');
-  setTimeout(() => document.getElementById('kp-close-driver').focus(), 80);
-}
-function closeKpCloseModal() { document.getElementById('ov-kp-close').classList.remove('open'); }
-function toggleCloseEarly() {
-  const checked = document.getElementById('kp-close-early-chk').checked;
-  document.getElementById('kp-early-reason-row').classList.toggle('visible', checked);
-}
-function applyKpClose() {
-  const driver = (document.getElementById('kp-close-driver').value || '').trim().toUpperCase();
-  if (!driver) { alert('Enter the transport driver\'s rank and name.'); return; }
-  const sig = getSigDataURL('sig-kp-close');
-  if (!sig) { alert('Driver signature required.'); return; }
-  const isEarly = document.getElementById('kp-close-early-chk').checked;
-  const earlyReason = (document.getElementById('kp-close-early-reason').value || '').trim();
-  const ts = Date.now();
-  kpStatus = 'closed';
-  const entry = { action: 'CLOSE', ts, driver, driverSig: sig, early: isEarly, earlyReason };
-  kpLog.push(entry);
-  const detail = `Driver: ${driver}${isEarly ? ' · EARLY CLOSE' : ''}${earlyReason ? ' · ' + earlyReason : ''}`;
-  actingAs(driver);
-  addLog(0, 'in', 'KEYPRESS CLOSED', detail);
-  closeKpCloseModal();
-  showKpLockedOverlay();
-  persist();
-}
-
-// ── OPEN modal ───────────────────────────────────────────
-function openKpOpenModal() {
-  // Check if this is a same-day re-open after early close
-  const lastClose = [...kpLog].reverse().find(e => e.action === 'CLOSE');
-  const isSameDay = lastClose && new Date(lastClose.ts).toDateString() === new Date().toDateString() && lastClose.early;
-  const specialSection = document.getElementById('kp-special-section');
-  specialSection.style.display = isSameDay ? '' : 'none';
-  document.getElementById('kp-open-modal-title').textContent = isSameDay ? '⚠️ Re-Open Keypress (Same Day)' : '🔓 Open Keypress';
-  document.getElementById('kp-open-modal-sub').textContent = isSameDay ? 'Keypress was closed early today — state special purpose' : 'Transport driver sign-off to start the day';
-  document.getElementById('kp-open-driver').value = '';
-  document.getElementById('kp-reopen-special-chk').checked = false;
-  document.getElementById('kp-open-special-purpose').value = '';
-  document.getElementById('kp-special-purpose-row').classList.remove('visible');
-  reinitSig('sig-kp-open');
-  document.getElementById('ov-kp-open').classList.add('open');
-  setTimeout(() => document.getElementById('kp-open-driver').focus(), 80);
-}
-function closeKpOpenModal() { document.getElementById('ov-kp-open').classList.remove('open'); }
-function toggleSpecialReopen() {
-  const checked = document.getElementById('kp-reopen-special-chk').checked;
-  document.getElementById('kp-special-purpose-row').classList.toggle('visible', checked);
-}
-function applyKpOpen() {
-  const driver = (document.getElementById('kp-open-driver').value || '').trim().toUpperCase();
-  if (!driver) { alert('Please enter the transport driver\'s rank and name.'); return; }
-  const sig = getSigDataURL('sig-kp-open');
-  if (!sig) { alert('Driver signature is required to open the keypress.'); return; }
-  // Check if same-day re-open — require special purpose checkbox
-  const lastClose = [...kpLog].reverse().find(e => e.action === 'CLOSE');
-  const isSameDay = lastClose && new Date(lastClose.ts).toDateString() === new Date().toDateString() && lastClose.early;
-  const specialChecked = document.getElementById('kp-reopen-special-chk').checked;
-  const specialPurpose = (document.getElementById('kp-open-special-purpose').value || '').trim();
-  if (isSameDay && !specialChecked) {
-    alert('This keypress was closed early today.\nPlease check the "Re-opening" box and state a special purpose.'); return;
-  }
-  if (isSameDay && specialChecked && !specialPurpose) {
-    alert('Please enter the special purpose / reason for re-opening.'); return;
-  }
-  const ts = Date.now();
-  kpStatus = 'open';
-  const entry = { action: 'OPEN', ts, driver, driverSig: sig, specialPurpose: specialPurpose || null };
-  kpLog.push(entry);
-  const detail = `Driver: ${driver}${specialPurpose ? ' · SPECIAL: ' + specialPurpose : ''}`;
-  actingAs(driver);
-  addLog(0, 'in', isSameDay ? 'KEYPRESS REOPENED (SPECIAL)' : 'KEYPRESS OPENED', detail);
-  closeKpOpenModal();
-  hideKpLockedOverlay();
-  persist();
-}
-
-// ── Locked overlay ────────────────────────────────────────
-function showKpLockedOverlay() {
-  const ov = document.getElementById('kp-locked-overlay');
-  const lastClose = [...kpLog].reverse().find(e => e.action === 'CLOSE');
-  if (lastClose) {
-    document.getElementById('kp-closed-at-val').textContent = fmtDT(lastClose.ts);
-    document.getElementById('kp-closed-driver-val').textContent = lastClose.driver || '—';
-    document.getElementById('kp-early-row').style.display = lastClose.early ? '' : 'none';
-  }
-  ov.style.display = 'flex';
-  document.getElementById('kp-close-bar').style.display = 'none';
-}
-function hideKpLockedOverlay() {
-  document.getElementById('kp-locked-overlay').style.display = 'none';
-  document.getElementById('kp-close-bar').style.display = '';
-  renderAll();
-}
-
-// ── Patch all action functions to check kpGuard ──────────
-const _kpGuardedFns = ['openIssue','openQuickIssue','openReturn','openOffrun','openBulkModal'];
-// We apply the guard inside each opener via the guard check pattern:
-// Wrap openIssue, openQuickIssue, openReturn, openOffrun, openBulkModal
-(function(){
-  const origOpenIssue = openIssue;
-  openIssue = function(id){ if(kpGuard()) return; origOpenIssue(id); };
-  const origOpenQuick = openQuickIssue;
-  openQuickIssue = function(id){ if(kpGuard()) return; origOpenQuick(id); };
-  const origOpenReturn = openReturn;
-  openReturn = function(id){ if(kpGuard()) return; origOpenReturn(id); };
-  const origOpenOffrun = openOffrun;
-  openOffrun = function(id){ if(kpGuard()) return; origOpenOffrun(id); };
-  const origBulk = openBulkModal;
-  openBulkModal = function(){ if(kpGuard()) return; origBulk(); };
-})();
-
-// ── Persist / hydrate kpStatus and kpLog ─────────────────
-// (handled by patching persist/hydrate below — already done via _hydratePatched)
-
-// ─── INIT HOOK: run patched hydrate ──────────────────────
-window._hydratePatched && window._hydratePatched();
-
-// Show locked overlay handled in DOMContentLoaded below
-
-renderAll();
-tick();
-updateExportBanner();
-setInterval(tick, 1000);
-
-initAllSigs();
-// Init close/open sig pads and restore locked state after DOM is fully parsed
-document.addEventListener('DOMContentLoaded', () => {
-  initSig('sig-kp-close');
-  initSig('sig-kp-open');
-  if (kpStatus === 'closed') showKpLockedOverlay();
-});
-</script>
 
 <!-- ── KEYPRESS LOCKED OVERLAY ── -->
 <div class="kp-locked-overlay" id="kp-locked-overlay" style="display:none;">
@@ -2911,7 +1024,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="kp-meta-row" id="kp-early-row" style="display:none;"><span class="kp-meta-lbl">Note</span><span class="kp-meta-val" style="color:var(--offrun);">Closed early</span></div>
     </div>
     <div class="kp-locked-body">
-      <button class="kp-open-btn" id="kp-open-btn" onclick="openKpOpenModal()">🔓 Open Keypress</button>
+      <button class="kp-open-btn" id="kp-open-btn">🔓 Open Keypress</button>
       <div class="kp-reopen-note" id="kp-reopen-note">
         Transport driver sign-off required to open.
       </div>
@@ -2920,14 +1033,14 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 
 <!-- ── CLOSE KEYPRESS MODAL ── -->
-<div class="overlay" id="ov-kp-close" onclick="if(event.target===this)closeKpCloseModal()">
+<div class="overlay" id="ov-kp-close">
   <div class="modal" style="width:min(480px,100%);">
     <div class="mhdr">
       <div>
         <div class="mtitle">🔒 Close Keypress</div>
         <div class="msub" id="kp-close-modal-sub">Sign off to close for the day</div>
       </div>
-      <button class="mclose" onclick="closeKpCloseModal()">Cancel</button>
+      <button class="mclose">Cancel</button>
     </div>
     <div class="mbody">
       <div class="fsec-block sec-ret">
@@ -2941,7 +1054,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="sig-wrap" id="sig-wrap-kp-close">
             <canvas class="sig-canvas" id="sig-kp-close" height="110"></canvas>
             <div class="sig-placeholder" id="sig-ph-kp-close"><span>✍ Driver signs here</span></div>
-            <button class="sig-clear-tr" onclick="clearSig('sig-kp-close')">Clear</button><button class="sig-expand-br" onclick="openSigModal('sig-kp-close')" title="Expand">⛶ Expand</button>
+            <button class="sig-clear-tr">Clear</button><button class="sig-expand-br" title="Expand">⛶ Expand</button>
           </div>
           <div class="sig-label" id="sig-lbl-kp-close">Draw signature above</div>
         </div>
@@ -2949,7 +1062,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="fsec-block sec-neutral" style="border-bottom:none;">
         <div class="fsec-title" style="color:var(--text-dim);"><span class="sec-icon">📋</span>Options</div>
         <div class="kp-chk-row">
-          <input type="checkbox" id="kp-close-early-chk" onchange="toggleCloseEarly()">
+          <input type="checkbox" id="kp-close-early-chk">
           <label class="kp-chk-lbl" for="kp-close-early-chk"><strong>Closing early</strong> — keys not needed until tomorrow</label>
         </div>
         <div class="fg kp-special-row" id="kp-early-reason-row">
@@ -2960,21 +1073,21 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
     </div>
     <div class="mfooter">
-      <button class="bcancel" onclick="closeKpCloseModal()">Cancel</button>
-      <button class="bprimary bp-offrun" onclick="applyKpClose()">Confirm Close Keypress</button>
+      <button class="bcancel">Cancel</button>
+      <button class="bprimary bp-offrun">Confirm Close Keypress</button>
     </div>
   </div>
 </div>
 
 <!-- ── OPEN KEYPRESS MODAL ── -->
-<div class="overlay" id="ov-kp-open" onclick="if(event.target===this)closeKpOpenModal()">
+<div class="overlay" id="ov-kp-open">
   <div class="modal" style="width:min(480px,100%);">
     <div class="mhdr">
       <div>
         <div class="mtitle" id="kp-open-modal-title">🔓 Open Keypress</div>
         <div class="msub" id="kp-open-modal-sub">Transport driver sign-off required</div>
       </div>
-      <button class="mclose" onclick="closeKpOpenModal()">Cancel</button>
+      <button class="mclose">Cancel</button>
     </div>
     <div class="mbody">
       <div class="fsec-block sec-ops">
@@ -2988,7 +1101,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="sig-wrap" id="sig-wrap-kp-open">
             <canvas class="sig-canvas" id="sig-kp-open" height="110"></canvas>
             <div class="sig-placeholder" id="sig-ph-kp-open"><span>✍ Driver signs here</span></div>
-            <button class="sig-clear-tr" onclick="clearSig('sig-kp-open')">Clear</button><button class="sig-expand-br" onclick="openSigModal('sig-kp-open')" title="Expand">⛶ Expand</button>
+            <button class="sig-clear-tr">Clear</button><button class="sig-expand-br" title="Expand">⛶ Expand</button>
           </div>
           <div class="sig-label" id="sig-lbl-kp-open">Draw signature above</div>
         </div>
@@ -2996,7 +1109,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="fsec-block sec-neutral" id="kp-special-section" style="border-bottom:none;display:none;">
         <div class="fsec-title" style="color:var(--out);"><span class="sec-icon">⚠️</span>Special Re-Opening</div>
         <div class="kp-chk-row">
-          <input type="checkbox" id="kp-reopen-special-chk" onchange="toggleSpecialReopen()">
+          <input type="checkbox" id="kp-reopen-special-chk">
           <label class="kp-chk-lbl" for="kp-reopen-special-chk"><strong>Re-opening after early close</strong> — state reason below</label>
         </div>
         <div class="fg kp-special-row" id="kp-special-purpose-row">
@@ -3006,33 +1119,33 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
     </div>
     <div class="mfooter">
-      <button class="bcancel" onclick="closeKpOpenModal()">Cancel</button>
-      <button class="bprimary bp-in" id="kp-open-confirm-btn" onclick="applyKpOpen()">Open Keypress</button>
+      <button class="bcancel">Cancel</button>
+      <button class="bprimary bp-in" id="kp-open-confirm-btn">Open Keypress</button>
     </div>
   </div>
 </div>
 
 <!-- ── FLEET MANAGER MODAL ── -->
-<div class="log-overlay" id="ov-fleet-mgr" onclick="if(event.target===this)closeFleetMgr()">
+<div class="log-overlay" id="ov-fleet-mgr">
   <div class="modal fleet-mgr-panel">
     <div class="mhdr">
       <div><div class="mtitle">Fleet Management</div><div class="msub" id="fleet-mgr-sub">Manage vehicles — all changes are audit logged</div></div>
-      <button class="mclose" onclick="closeFleetMgr()">Close</button>
+      <button class="mclose">Close</button>
     </div>
     <div class="fleet-mgr-list" id="fleet-mgr-list"></div>
     <div class="fleet-mgr-add-bar">
       <span id="fleet-mgr-count"></span>
-      <button class="badd" onclick="openVehForm(null)">+ Add Vehicle</button>
+      <button class="badd">+ Add Vehicle</button>
     </div>
   </div>
 </div>
 
 <!-- ── VEHICLE ADD / EDIT MODAL ── -->
-<div class="overlay veh-form-overlay" id="ov-veh-form" onclick="if(event.target===this)closeVehForm()">
+<div class="overlay veh-form-overlay" id="ov-veh-form">
   <div class="modal" style="width:460px;">
     <div class="mhdr">
       <div><div class="mtitle" id="veh-form-title">Add Vehicle</div><div class="msub" id="veh-form-sub">New fleet entry</div></div>
-      <button class="mclose" onclick="closeVehForm()">Cancel</button>
+      <button class="mclose">Cancel</button>
     </div>
     <div class="mbody">
       <div class="fsec-block sec-key">
@@ -3055,30 +1168,30 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
     </div>
     <div class="mfooter">
-      <button class="bcancel" onclick="closeVehForm()">Cancel</button>
-      <button class="bprimary bp-fleet" id="veh-form-save-btn" onclick="saveVehForm()">Save Vehicle</button>
+      <button class="bcancel">Cancel</button>
+      <button class="bprimary bp-fleet" id="veh-form-save-btn">Save Vehicle</button>
     </div>
   </div>
 </div>
 
 <!-- ── SIG EXPAND MODAL ── -->
-<div class="sig-modal-overlay" id="sig-modal-ov" onclick="if(event.target===this)closeSigModal(false)">
+<div class="sig-modal-overlay" id="sig-modal-ov">
   <div class="sig-modal-panel">
     <div class="sig-modal-hdr">
       <div class="sig-modal-title" id="sig-modal-title">✍ Signature</div>
-      <button class="sig-modal-clear" onclick="clearSigModal()">Clear</button>
+      <button class="sig-modal-clear">Clear</button>
     </div>
     <div class="sig-modal-canvas-wrap">
       <canvas class="sig-modal-canvas" id="sig-modal-canvas"></canvas>
       <div class="sig-modal-placeholder" id="sig-modal-ph"><span>✍ Sign here — more room to write</span></div>
-      <button class="sig-modal-done" onclick="closeSigModal(true)">Done ✓</button>
+      <button class="sig-modal-done">Done ✓</button>
     </div>
     <div class="sig-modal-footer">Sign above, then tap Done to confirm. Tap outside or Done to close.</div>
   </div>
 </div>
 
 <!-- ── SIG ZOOM OVERLAY ── -->
-<div class="sig-zoom-overlay" id="sig-zoom-ov" onclick="this.classList.remove('open')">
+<div class="sig-zoom-overlay" id="sig-zoom-ov">
   <img class="sig-zoom-img" id="sig-zoom-img" src="" alt="Signature">
 </div>
 </body>
