@@ -1138,10 +1138,15 @@ function _setupSigCanvas(canvas,canvasId,cssHeight){
   ctx.strokeStyle=isLight?'#1e293b':'#e2e8f0';
   ctx.lineWidth=2.2;ctx.lineCap='round';ctx.lineJoin='round';
 
-  let drawing=false,points=[];
+  let drawing=false,points=[],cachedRect=null;
 
   const ptFromEvent=(e)=>{
-    const r=canvas.getBoundingClientRect();
+    // getBoundingClientRect forces a synchronous layout if anything on the
+    // page is layout-dirty. Calling it on every move event — while tick()
+    // is mutating DOM text elsewhere once a second — causes layout
+    // thrashing on slower machines. Cache it for the duration of the stroke
+    // instead; it's refreshed at the start of every new stroke (see down handlers).
+    const r=cachedRect||(cachedRect=canvas.getBoundingClientRect());
     // Clamp to canvas bounds to prevent out-of-range coords on slow PCs
     return{
       x:Math.max(0,Math.min((e.clientX-r.left), cssW)),
@@ -1169,6 +1174,8 @@ function _setupSigCanvas(canvas,canvasId,cssHeight){
     // setPointerCapture can throw on some locked-down corporate browsers
     try{canvas.setPointerCapture(e.pointerId);}catch(_){}
     drawing=true;
+    cachedRect=null;
+    window._sigBusy=true;
     const p=ptFromEvent(e);
     points=[p];
     ctx.beginPath();ctx.moveTo(p.x,p.y);
@@ -1195,6 +1202,7 @@ function _setupSigCanvas(canvas,canvasId,cssHeight){
   const onPointerUp=(e)=>{
     if(!drawing)return;
     drawing=false;
+    window._sigBusy=false;
     if(points.length)flushPoints(points);
     points=[];
     if(canvasId!=='_modal_')updateSigState(canvasId);
@@ -1208,6 +1216,8 @@ function _setupSigCanvas(canvas,canvasId,cssHeight){
     if(canvas._usingPointer)return;
     e.preventDefault();
     drawing=true;
+    cachedRect=null;
+    window._sigBusy=true;
     const p=ptFromEvent(e);
     points=[p];
     ctx.beginPath();ctx.moveTo(p.x,p.y);
@@ -1224,6 +1234,7 @@ function _setupSigCanvas(canvas,canvasId,cssHeight){
   const onMouseUp=(e)=>{
     if(canvas._usingPointer||!drawing)return;
     drawing=false;
+    window._sigBusy=false;
     if(points.length)flushPoints(points);
     points=[];
     if(canvasId!=='_modal_')updateSigState(canvasId);
@@ -1234,6 +1245,8 @@ function _setupSigCanvas(canvas,canvasId,cssHeight){
     if(canvas._usingPointer)return;
     e.preventDefault();
     drawing=true;
+    cachedRect=null;
+    window._sigBusy=true;
     const t=e.touches[0];
     const p=ptFromEvent({clientX:t.clientX,clientY:t.clientY});
     points=[p];
@@ -1252,6 +1265,7 @@ function _setupSigCanvas(canvas,canvasId,cssHeight){
   const onTouchEnd=(e)=>{
     if(canvas._usingPointer||!drawing)return;
     drawing=false;
+    window._sigBusy=false;
     if(points.length)flushPoints(points);
     points=[];
     if(canvasId!=='_modal_')updateSigState(canvasId);
@@ -2167,6 +2181,11 @@ function tick(){
   const now=new Date();
   document.getElementById('clock-time').textContent=now.toTimeString().slice(0,8);
   document.getElementById('clock-date').textContent=now.toLocaleDateString('en-GB',{weekday:'short',day:'2-digit',month:'short',year:'numeric'}).toUpperCase();
+  // While a signature is being actively drawn, skip the heavier DOM work below.
+  // It mutates text across ~20 vehicle rows every second, which can force a
+  // layout recalc right in the middle of a pointer stroke on slower machines.
+  // Nothing is lost — it just resumes on the next tick once the stroke ends.
+  if(window._sigBusy)return;
   // Re-check backup reminder banner once a minute (time-based trigger doesn't need per-second polling)
   if(now.getSeconds()===0)updateExportBanner();
   vehicles.filter(v=>!v.nil).forEach(v=>{
